@@ -1,0 +1,51 @@
+/* Home.css */
+
+/* Basic styling for the home page */
+body {
+    font-family: Arial, sans-serif; /* Font for the entire page */
+    background-color: #fafafa; /* Light background color */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Styling for the main container */
+  h2 {
+    text-align: center; /* Center the heading */
+    color: #090d12; /* Dark text color */
+    margin: 20px 0; /* Add margin around the heading */
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #587797; /* Dark background for navbar */
+  }
+  
+  .navbar-brand,
+  .nav-link {
+    color: #e26565; /* White text color for navbar items */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #ffffff; /* White icon for toggler */
+  }
+  
+  /* Hover effects for navbar links */
+  .nav-link:hover {
+    color: #17d039; /* Light grey on hover */
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: rgba(52, 58, 64, 0.8); /* Semi-transparent dark background for footer */
+    color: #ffffff; /* White text color for footer */
+  }
+  
+  footer a {
+    color: #ffffff; /* White color for footer links */
+  }
+  
+  footer a:hover {
+    color: #e5eaee; /* Light grey on hover for footer links */
+  }
+  
+  
