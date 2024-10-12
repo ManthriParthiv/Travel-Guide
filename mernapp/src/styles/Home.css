@@ -10,14 +10,14 @@ body {
   
   /* Styling for the main container */
   h2 {
-    text-align: center; /* Center the heading */
+    text-align:center; /* Center the heading */
     color: #090d12; /* Dark text color */
     margin: 20px 0; /* Add margin around the heading */
   }
   
   /* Navbar styles */
   .navbar {
-    background-color: #587797; /* Dark background for navbar */
+    background-color: #587797; /* background for navbar */
   }
   
   .navbar-brand,
@@ -36,7 +36,7 @@ body {
   
   /* Footer styles */
   footer {
-    background-color: rgba(52, 58, 64, 0.8); /* Semi-transparent dark background for footer */
+    background-color: rgba(245, 246, 248, 0.918); /* Semi-transparent dark background for footer */
     color: #ffffff; /* White text color for footer */
   }
   
