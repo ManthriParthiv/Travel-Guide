@@ -5,7 +5,7 @@ const app = express();
 const mongoURL = 'mongodb+srv://manthriparthiv08:manthriparthiv039@clusterproject.l1sp5.mongodb.net/project?retryWrites=true&w=majority&appName=ClusterProject';
 
 // Connect to MongoDB
-mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(mongoURL)
   .then(async () => {
     console.log('Connection successful');
 
@@ -17,7 +17,7 @@ mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
       if (data.length === 0) {
         console.log('No data found in the "sample" collection');
       } else {
-        console.log('Fetched Data:',);
+        console.log('Data available at db.js');
       }
     } catch (err) {
       console.error('Error fetching data:', err);  // Explicit error logging
@@ -26,18 +26,6 @@ mongoose.connect(mongoURL, { useNewUrlParser: true, useUnifiedTopology: true })
   .catch((err) => {
     console.error('Connection failed:', err);
   });
-
-// Start server
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-
-
-
-
-
 
 // const mongoose = require('mongoose');
 // const express = require('express');
@@ -50,12 +38,6 @@ app.listen(PORT, () => {
 //         else console.log(data);
 //     })
 // }).catch((err)=>console.log('no connection'));
-
-
-
-
-
-
 // const mongoDB= async()=>{
 //     await mongoose.connect(mongoURL,{useNewUrlParser:true},(err,result)=>{
 //         if(err) console.log("---",err)
@@ -63,6 +45,5 @@ app.listen(PORT, () => {
 //             console.log("connected")
 //     }
 //     });
-
 // }
 
