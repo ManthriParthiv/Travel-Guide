@@ -1,4 +1,4 @@
-/* Apply a background image to the whole page */
+* Apply a background image to the whole page */
 body {
     margin: 0;
     padding: 0;
@@ -72,4 +72,3 @@ body {
   .login-text a:hover {
     text-decoration: underline;
   }
-  

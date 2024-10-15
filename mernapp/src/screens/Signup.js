@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
+import "./signup.css";
 export default function Signup() {
   const [credentials, setCredentials] = useState({
     name: "",
