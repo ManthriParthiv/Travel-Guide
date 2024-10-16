@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./signup.css";
+import '../styles/signup.css'; // Keep the external CSS if needed for additional styling
+
 export default function Signup() {
   const [credentials, setCredentials] = useState({
     name: "",
@@ -45,8 +46,15 @@ export default function Signup() {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="signup-background">
+      <form onSubmit={handleSubmit} style={{
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        padding: '30px',
+        borderRadius: '10px',
+        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+        width: '350px',
+        textAlign: 'center'
+      }}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input
@@ -97,6 +105,7 @@ export default function Signup() {
     </div>
   );
 }
+
 
 // import React,{useState} from 'react'
 // import { Link } from 'react-router-dom'

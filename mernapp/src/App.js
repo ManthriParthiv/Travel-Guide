@@ -1,11 +1,11 @@
 import './App.css';
 import Home from './screens/Home';
+import Login from './screens/Login';
 import {
   BrowserRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
-import Login from './screens/Login';
 import Signup from './screens/Signup';
 import Hotelbooking from './screens/Hotelbooking';
 function App() {
