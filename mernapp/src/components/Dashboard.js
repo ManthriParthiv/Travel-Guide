@@ -25,7 +25,7 @@ export default function Dashboard() {
                 <Link className="nav-link active" aria-current="page" to="/">Travel Planner</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/login">Weather Report</Link>
+                <Link className="nav-link" to="/">Weather Report</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/signup">Chat Assistance</Link>
