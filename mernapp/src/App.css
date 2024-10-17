@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+.h1 {
+    color: black;
+}
+.hero {
+    background-image: url('https://wallpaperaccess.com/full/706945.jpg'); /* Replace with your image URL */
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+.main-features, .popular-categories, .newsletter, .footer {
+    padding: 20px;
+    text-align: center;
+}
+.feature, .category {
+    margin: 20px 0;
+}
+.cta {
+    background: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
