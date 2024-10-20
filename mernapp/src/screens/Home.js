@@ -15,15 +15,15 @@ export default function Home() {
       </div>
 
       <div className="main-features" id="main-features">
-        <h2>Main Features</h2>
+        <h2>Why Should you use travel planner ?</h2>
         <div className="feature">
-          <h3>Why Should you use travel planner ?</h3>
-          <p>Explore the palces with proper planning to explore more about the culture and have the incredeble experice.</p>
+          <h3>Real Time weather tracker</h3>
+          <p>ccurately track the weather with your preferred Mood</p>
         </div>
 
         <div className="feature">
-          <h3>Travel Tips & Guides</h3>
-          <p>Insider tips to navigate local customs and enhance your travel experience.</p>
+          <h3>Chatbot Guide</h3>
+          <p>It helps you to assist your trip to make more Impactful</p>
         </div>
 
         <div className="feature">
