@@ -1,0 +1,89 @@
+/* weather.css */
+
+/* General container styles */
+.container {
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff, #e3f2fd); /* Soft gradient background */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    text-align: center; /* Center text within the container */
+    margin: 20px auto; /* Margin for spacing */
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #1976d2; /* Bright blue */
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  h3 {
+    color: #ff9800; /* Bright orange */
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: semi-bold;
+  }
+  
+  /* Input styles */
+  input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input:focus {
+    border-color: #66bb6a; /* Lighter green on focus */
+    box-shadow: 0 0 5px rgba(102, 187, 106, 0.5); /* Glow effect */
+    outline: none;
+  }
+  
+  /* Button styles */
+  button {
+    width: 100%;
+    padding: 12px;
+    background-color: #2196f3; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #1976d2; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight grow effect */
+  }
+  
+  /* Loading and error message styles */
+  p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: chocolate;
+  }
+  
+  p.loading-message {
+    color: #ffeb3b; /* Bright yellow for loading */
+  }
+  
+  p.error-message {
+    color: #e53935; /* Red */
+    font-weight: bold;
+    animation: shake 0.5s; /* Shake effect for errors */
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+  }
+  

@@ -9,6 +9,9 @@ import {
 } from "react-router-dom";
 import Signup from './screens/Signup';
 import Hotelbooking from './screens/Hotelbooking';
+import Aboutus from './screens/Aboutus';
+import ContactUs from './screens/Contact Us';
+import Travelplanning from './screens/Travelplanning';
 import { useEffect } from 'react';
 
 function App() {
@@ -34,6 +37,9 @@ function App() {
           <Route exact path='/login' element={<Login />} />
           <Route exact path='/signup' element={<Signup />} />
           <Route exact path='/hotelbooking' element={<Hotelbooking />} />
+          <Route exact path='/aboutus' element={<Aboutus />} />
+          <Route exact path='/contactus' element={<ContactUs />} />
+          <Route exact path='/travelplanning' element={<Travelplanning />} />
         </Routes>
       </div>
     </Router>
