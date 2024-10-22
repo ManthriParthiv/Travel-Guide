@@ -1,128 +1,198 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background: #f4f4f4;
-    overflow-x: hidden;
-  }
-  
-  h1, h2, h3, p {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .hero {
-    background-image: url('https://wallpaperaccess.com/full/706945.jpg');
-    height: 100vh;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    animation: fadeIn 2s ease-in-out;
-    scroll-snap-align: start;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  .main-features, .popular-categories, .newsletter, .footer {
-    padding: 20px;
-    text-align: center;
-    animation: slideUp 1.5s ease-in-out;
-  }
-  
-  @keyframes slideUp {
-    from { transform: translateY(50px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  }
-  
-  .cta {
-    background: #007BFF;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
-  
-  .cta:hover {
-    background: #0056b3;
-  }
-  
-  .carousel {
-    padding: 40px;
-    text-align: center;
-    background: #f4f4f4;
-  }
-  
-  .carousel-track {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    gap: 10px;
-    padding: 20px 0;
-  }
-  
-  .carousel-item {
-    min-width: 300px;
-    height: 200px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    scroll-snap-align: start;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 24px;
-    transition: transform 0.3s ease;
-  }
-  
-  .carousel-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .feature, .category {
-    margin: 20px 0;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  overflow-x: hidden;
+  animation: fadeIn 2s ease-in-out;
+}
+
+/* Fade-in effect for the entire page */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero section animation */
+.hero {
+  background-image: url('../src/assests/images/travelhome.jpg');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInHero 2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+/* Smooth background and text fade-in for hero */
+@keyframes fadeInHero {
+  from {
+    background-position: top;
     opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-in-out forwards;
   }
-  
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
+  to {
+    background-position: center;
+    opacity: 1;
   }
-  
-  .newsletter input[type="email"] {
-    padding: 10px;
-    width: 60%;
-    margin-right: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .newsletter button {
-    padding: 10px 20px;
-    background: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .newsletter button:hover {
-    background: #0056b3;
-  }
-  
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-  
+}
+
+/* Content section with smooth slide and fade-in animation */
+.content1 {
+  background-image: url('../src/assests/images/travelhome2.jpg');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInContent 2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+/* Content fade-in from left */
+@keyframes fadeInContent {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Carousel animation */
+.carousel {
+  background-image: url('../src/assests/images/travelhome4.jpg');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+}
+
+/* Carousel item slide-in and hover effect */
+@keyframes fadeInCarousel {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Individual carousel item hover scaling */
+.carousel-item {
+  min-width: 300px;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  transition: transform 0.3s ease;
+  animation: slideInItem 1s ease forwards;
+}
+
+/* Carousel item slide-up effect */
+@keyframes slideInItem {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.carousel-item:hover {
+  transform: scale(1.1);
+}
+
+/* Features and Categories animation with slight delay for each */
+.main-features, .popular-categories, .newsletter, .footer {
+  padding: 20px;
+  text-align: center;
+  animation: slideUp 1.5s ease-in-out;
+  opacity: 0;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.feature, .category {
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-in-out forwards;
+}
+
+/* Slight delay for cascading effects */
+.feature:nth-child(2), .category:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.feature:nth-child(3), .category:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Slide up effect for sections */
+@keyframes slideUp {
+  from { transform: translateY(50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Call-to-action hover effect */
+.cta {
+  background: #007BFF;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cta:hover {
+  background: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Newsletter fade-in and smooth hover */
+.newsletter input[type="email"] {
+  padding: 10px;
+  width: 60%;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  animation: fadeInUp 2s ease forwards;
+}
+
+.newsletter button:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

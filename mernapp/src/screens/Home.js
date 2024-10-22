@@ -14,6 +14,7 @@ export default function Home() {
         <a href="#main-features" className="cta">Start Your Adventure</a>
       </div>
 
+      <div className="content1">
       <div className="main-features" id="main-features">
         <h2>Why Should you use travel planner ?</h2>
         <div className="feature">
@@ -21,12 +22,12 @@ export default function Home() {
           <p>ccurately track the weather with your preferred Mood</p>
         </div>
 
-        <div className="feature">
+        <div className="feature" id="feature">
           <h3>Chatbot Guide</h3>
           <p>It helps you to assist your trip to make more Impactful</p>
         </div>
 
-        <div className="feature">
+        <div className="feature1" id="feature1">
           <h3>User Reviews & Testimonials</h3>
           <p>“Best travel site ever! Helped me plan the perfect trip!”</p>
         </div>
@@ -41,8 +42,9 @@ export default function Home() {
           <p>Read about the top 10 hidden gems to visit in Europe!</p>
         </div>
       </div>
+      </div>
 
-      <div className="carousel">
+      <div className="content2" id="content2">
         <h2>Featured Destinations</h2>
         <div className="carousel-track">
           <div className="carousel-item" style={{ backgroundImage: "url('https://example.com/bali.jpg')" }}>
