@@ -9,56 +9,46 @@ export default function Home() {
       <div><Navbar /></div>
       
       <div className="hero" id="hero">
-        <h1>Welcome to Ultimate Travel Guide For Your Trip</h1>
-        <p>Experience the new way of travel around the world</p>
-        <a href="#main-features" className="cta">Start Your Adventure</a>
+        <h1><b>Welcome to Ultimate Travel Guide For Your Trip</b></h1>
+        <p><b>Experience the new way of travel around the world</b></p>
+        <a href="#main-features" className="cta"><b>Start Your Adventure</b></a>
       </div>
 
       <div className="content1">
-      <div className="main-features" id="main-features">
-        <h2>Why Should you use travel planner ?</h2>
-        <div className="feature">
-          <h3>Real Time weather tracker</h3>
-          <p>ccurately track the weather with your preferred Mood</p>
-        </div>
+        <div className="main-features" id="main-features">
+          <h1><b>Why Should you use travel planner ?</b></h1>
 
-        <div className="feature" id="feature">
-          <h3>Chatbot Guide</h3>
-          <p>It helps you to assist your trip to make more Impactful</p>
-        </div>
-
-        <div className="feature1" id="feature1">
-          <h3>User Reviews & Testimonials</h3>
-          <p>“Best travel site ever! Helped me plan the perfect trip!”</p>
-        </div>
-
-        <div className="feature">
-          <h3>Interactive Map Feature</h3>
-          <p>Click on a location to explore in-depth guides.</p>
-        </div>
-
-        <div className="feature">
-          <h3>Blog & Articles</h3>
-          <p>Read about the top 10 hidden gems to visit in Europe!</p>
-        </div>
-      </div>
-      </div>
-
-      <div className="content2" id="content2">
-        <h2>Featured Destinations</h2>
-        <div className="carousel-track">
-          <div className="carousel-item" style={{ backgroundImage: "url('https://example.com/bali.jpg')" }}>
-            <h3>Bali, Indonesia</h3>
+          <div className="feature2">
+            <h3>Personalized Itineraries</h3>
+            <p>Create custom travel plans tailored to your interests and preferences, ensuring you don’t miss out on key attractions or activities.</p>
           </div>
-          <div className="carousel-item" style={{ backgroundImage: "url('https://example.com/paris.jpg')" }}>
-            <h3>Paris, France</h3>
+
+          <div className="feature3">
+            <h3>Budget Management</h3>
+            <p>Keep track of your travel expenses and manage your budget effectively while on the go.</p>
           </div>
-          <div className="carousel-item" style={{ backgroundImage: "url('https://example.com/colorado.jpg')" }}>
-            <h3>Colorado, USA</h3>
+
+          <div className="feature4">
+            <h3>Efficient Time Planning</h3>
+            <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
+          </div>
+
+          <div className="feature5">
+            <h3>Safety and Emergency Alerts</h3>
+            <p>Receive real-time alerts about safety concerns or emergencies, helping you stay prepared and safe during your travels.</p>
           </div>
         </div>
       </div>
 
+      <div className="feature">
+        <h3>Real Time weather tracker</h3>
+        <p>Accurately track the weather with your preferred Mood</p>
+      </div>
+      
+      <div className="feature1">
+      <h3>Chatbot Guide</h3>
+      <p>It helps you to assist your trip to make more Impactful</p>
+      </div>
       <div className="popular-categories">
         <h2>Popular Categories</h2>
         <ul>

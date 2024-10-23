@@ -2,7 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f4f4f4;
+  background: #bd2d2d;
   overflow-x: hidden;
   animation: fadeIn 2s ease-in-out;
 }
@@ -33,6 +33,19 @@ h1, h2, h3, p {
   scroll-snap-align: start;
 }
 
+#feature{
+  background-image: url('../src/assests/images/Chatbot.jpg');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInHero 2s ease-in-out;
+  scroll-snap-align: start;
+}
 /* Smooth background and text fade-in for hero */
 @keyframes fadeInHero {
   from {
@@ -54,9 +67,10 @@ h1, h2, h3, p {
   flex-direction: column;
   justify-content: left;
   align-items: center;
+  text-size-adjust: 100px;
   color: white;
   text-align: center;
-  animation: fadeInContent 2s ease-in-out;
+  animation: fadeIn 2s ease-in-out;
   scroll-snap-align: start;
 }
 
@@ -68,7 +82,7 @@ h1, h2, h3, p {
 
 /* Carousel animation */
 .carousel {
-  background-image: url('../src/assests/images/travelhome4.jpg');
+  background-image: url('../src/assests/images/Chatbot.jpg');
   height: 100vh;
   background-size: cover;
   display: flex;
@@ -86,7 +100,35 @@ h1, h2, h3, p {
   from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
+.feature {
+  background-image: url('../src/assests/images/weaterr.gif');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+  font-size: 24px; /* Adjust this value for larger text */
+}
 
+
+.feature1{
+  background-image: url('../src/assests/images/chatbot.gif');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+}
 /* Individual carousel item hover scaling */
 .carousel-item {
   min-width: 300px;
@@ -100,7 +142,7 @@ h1, h2, h3, p {
   align-items: center;
   color: white;
   font-size: 24px;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, opacity 0.3s ease;
   animation: slideInItem 1s ease forwards;
 }
 
@@ -152,7 +194,7 @@ h1, h2, h3, p {
 
 /* Call-to-action hover effect */
 .cta {
-  background: #007BFF;
+  background: #0f73a1;
   color: white;
   padding: 15px 30px;
   border: none;
