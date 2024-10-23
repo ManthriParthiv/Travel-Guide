@@ -17,12 +17,6 @@ export default function Home() {
       <div className="content1">
         <div className="main-features" id="main-features">
           <h1><b>Why Should you use travel planner ?</b></h1>
-
-          <div className="feature2">
-            <h3>Personalized Itineraries</h3>
-            <p>Create custom travel plans tailored to your interests and preferences, ensuring you don’t miss out on key attractions or activities.</p>
-          </div>
-
           <div className="feature3">
             <h3>Budget Management</h3>
             <p>Keep track of your travel expenses and manage your budget effectively while on the go.</p>
@@ -31,11 +25,6 @@ export default function Home() {
           <div className="feature4">
             <h3>Efficient Time Planning</h3>
             <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
-          </div>
-
-          <div className="feature5">
-            <h3>Safety and Emergency Alerts</h3>
-            <p>Receive real-time alerts about safety concerns or emergencies, helping you stay prepared and safe during your travels.</p>
           </div>
         </div>
       </div>
@@ -49,6 +38,22 @@ export default function Home() {
       <h3>Chatbot Guide</h3>
       <p>It helps you to assist your trip to make more Impactful</p>
       </div>
+
+      <div className="feature4">
+      <h3><b>Efficient Time Planning</b></h3>
+      <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
+      </div>
+
+      <div className="feature5">
+      <h3><b>Save Travel</b></h3>
+      <p>Travel to your favorite places by knowing the crime percent in surroundings</p>
+      </div>
+
+      <div className="feature2">
+      <h3><b>Live Weather Tracking</b></h3>
+      <p></p>
+      </div>
+
       <div className="popular-categories">
         <h2>Popular Categories</h2>
         <ul>
@@ -70,3 +75,14 @@ export default function Home() {
     </div>
   );
 }
+
+const elements = document.querySelectorAll('.scroll-animate');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+});
+
+elements.forEach((el) => observer.observe(el));
