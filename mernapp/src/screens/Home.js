@@ -51,7 +51,7 @@ export default function Home() {
 
       <div className="feature2">
       <h3><b>Live Weather Tracking</b></h3>
-      <p></p>
+      <p>Get informed with latest weather update using Travel Guide</p>
       </div>
 
       <div className="popular-categories">
