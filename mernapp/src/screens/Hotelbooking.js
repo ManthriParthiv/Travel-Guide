@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import '../styles/Courosal.css';
+import '../styles/Homepage.css';
 import Dashboard from '../components/Dashboard';
 import Footer from '../components/Footer';
 

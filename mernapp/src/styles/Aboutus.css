@@ -3,22 +3,22 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f5f5f5; /* Light gray background */
-    color:blue; /* Dark gray text */
+    background-color: #ffffff; /* Light gray background */
+    color:rgb(0, 0, 0); /* Dark gray text */
 }
 
 h1 {
     color:rgb(0, 0, 0); /* Purple for the main heading */
 }
 h2 {
-    color:blue; /* Orange for subheadings */
+    color:rgb(0, 0, 0); /* Orange for subheadings */
 }
 h3 {
-    color:blue;
+    color:rgb(0, 0, 0);
 }
 p {
     line-height: 1.6; /* Spacing for paragraphs */
-    color:blueviolet;
+    color:rgb(0, 0, 0);
 }
 .team-member {
     margin-bottom: 20px; /* Space below each team member section */

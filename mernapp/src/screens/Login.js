@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import '../styles/Login.css'
+import '../styles/Login.css';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -38,37 +38,48 @@ export default function Login() {
       alert("Something went wrong! Please try again.");
     }
   };
+
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
   };
+
   return (
     <div className="login-background">
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            name="email"
-            value={credentials.email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            value={credentials.password}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <button type="submit" className="m-3 btn btn-success">Submit</button>
-        <Link to='/signup' className='m-3 btn btn-danger'>New User? Sign Up Here</Link>
-      </form>
+      <div className="login-container">
+        <h2 className="login-heading"><b>Login</b></h2> 
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              placeholder="Enter your Email"
+              value={credentials.email}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              name="password"
+              placeholder="Enter your password"
+              value={credentials.password}
+              onChange={onChange}
+              required
+            />
+          </div>
+          <button type="submit" className="m-3 btn btn-success">
+            Login
+          </button>
+          <Link to='/signup' className='m-3 btn btn-danger'>
+            New User? Sign Up Here
+          </Link>
+        </form>
+      </div>
     </div>
   );
 }
