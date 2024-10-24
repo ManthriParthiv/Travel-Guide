@@ -30,8 +30,8 @@ export default function Home() {
       </div>
 
       <div className="feature">
-        <h3>Real Time weather tracker</h3>
-        <p>Accurately track the weather with your preferred Mood</p>
+        <h3>Proper Planning for travel</h3>
+        <p>We can travel by selecting the Location with popular nearby places</p>
       </div>
       
       <div className="feature1">
