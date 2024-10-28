@@ -17,15 +17,6 @@ export default function Home() {
       <div className="content1">
         <div className="main-features" id="main-features">
           <h1><b>Why Should you use travel planner ?</b></h1>
-          <div className="feature3">
-            <h3>Budget Management</h3>
-            <p>Keep track of your travel expenses and manage your budget effectively while on the go.</p>
-          </div>
-
-          <div className="feature4">
-            <h3>Efficient Time Planning</h3>
-            <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
-          </div>
         </div>
       </div>
 
@@ -39,9 +30,19 @@ export default function Home() {
       <p>It helps you to assist your trip to make more Impactful</p>
       </div>
 
-      <div className="feature4">
+      <div className="feature6">
       <h3><b>Efficient Time Planning</b></h3>
       <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
+      </div>
+
+      <div className="feature2">
+      <h3><b>Live Weather Tracking</b></h3>
+      <p>Get informed with latest weather update using Travel Guide</p>
+      </div>
+
+      <div className="feature3">
+      <h3><b>Nearby Police Station</b></h3>
+      <p>find the nearby plolice station in the particular Location</p>
       </div>
 
       <div className="feature5">
@@ -49,9 +50,9 @@ export default function Home() {
       <p>Travel to your favorite places by knowing the crime percent in surroundings</p>
       </div>
 
-      <div className="feature2">
-      <h3><b>Live Weather Tracking</b></h3>
-      <p>Get informed with latest weather update using Travel Guide</p>
+      <div className="feature4">
+      <h3><b>Find nearby Attractive Places</b></h3>
+      <p>You can search for nearby popular places near the Visited Location</p>
       </div>
 
       <div className="popular-categories">

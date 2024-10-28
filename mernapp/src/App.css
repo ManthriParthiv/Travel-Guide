@@ -193,7 +193,50 @@ h1, h2, h3, p {
   font-size: 24px;
 }
 
+.feature3{
+  background-image: url('../src/assests/images/police.gif');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+  font-size: 24px;
+}
 
+.feature4{
+  background-image: url('../src/assests/images/fetch.gif');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+  font-size: 24px;
+}
+
+.feature6{
+  background-image: url('../src/assests/images/save.gif');
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+  color: white;
+  text-align: center;
+  animation: fadeInCarousel 2s ease-in-out;
+  scroll-snap-align: start;
+  font-size: 24px;
+}
 /* Carousel item slide-up effect */
 @keyframes slideInItem {
   from { opacity: 0; transform: translateY(30px); }
