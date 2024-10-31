@@ -601,7 +601,7 @@ export default function Home() {
             }
         ],
     };
-
+    
     const handleSearch = () => {
         const country = countries[countryInput];
         if (country) {
