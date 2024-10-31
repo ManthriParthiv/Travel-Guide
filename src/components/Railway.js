@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const StationLocation = () => {
   const [stationName, setStationName] = useState(''); // User input for station name
-  const [stationCode, setStationCode] = useState(null); // Fetched station code
   const [locationData, setLocationData] = useState(null);
   const [error, setError] = useState(null);
 

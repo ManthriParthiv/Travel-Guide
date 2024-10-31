@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
-import '../styles/Homepage.css';
+import '../styles/Hotelbooking.css'
 import Dashboard from '../components/Dashboard';
 import Footer from '../components/Footer';
 import Chatbot from '../components/Chatbot';
-import StationLocation from '../components/Railway';
 import SupermarketSearch from '../components/Supermarket';
 import HotelSearch from '../components/Hotels';
 import PoliceStationSearch from '../components/Police';
@@ -78,9 +77,6 @@ export default function Hotelbooking() {
         </div>
         <div>
           <HotelSearch/>
-        </div>
-        <div>
-          <StationLocation/>
         </div>
         <div>
           <PoliceStationSearch/>
