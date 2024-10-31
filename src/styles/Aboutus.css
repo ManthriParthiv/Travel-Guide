@@ -1,0 +1,48 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+<<<<<<< HEAD
+    background-color: #ffffff; /* Light gray background */
+    color:rgb(0, 0, 0); /* Dark gray text */
+=======
+    background-color: #f5f5f5; /* Light gray background */
+    color:blue; /* Dark gray text */
+>>>>>>> 71e3763 (adding style and content to homepage about us page and contact us page)
+}
+
+h1 {
+    color:rgb(0, 0, 0); /* Purple for the main heading */
+}
+h2 {
+<<<<<<< HEAD
+    color:rgb(0, 0, 0); /* Orange for subheadings */
+}
+h3 {
+    color:rgb(0, 0, 0);
+}
+p {
+    line-height: 1.6; /* Spacing for paragraphs */
+    color:rgb(0, 0, 0);
+=======
+    color:blue; /* Orange for subheadings */
+}
+h3 {
+    color:rgb(0, 0, 0);
+}
+p {
+    line-height: 1.6; /* Spacing for paragraphs */
+    color:blueviolet;
+>>>>>>> 71e3763 (adding style and content to homepage about us page and contact us page)
+}
+.team-member {
+    margin-bottom: 20px; /* Space below each team member section */
+    padding: 15px; /* Inner spacing */
+    background: white; /* White background for team member cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+
+
