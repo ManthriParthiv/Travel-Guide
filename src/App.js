@@ -11,7 +11,7 @@ import Signup from './screens/Signup';
 import Hotelbooking from './screens/Hotelbooking';
 import Aboutus from './screens/Aboutus';
 import ContactUs from './screens/Contact Us';
-import Travelplanning from './screens/Travelplanning';
+import Travelbooking from './screens/Travelbooking';
 import { useEffect } from 'react';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
           <Route exact path='/hotelbooking' element={<Hotelbooking />} />
           <Route exact path='/aboutus' element={<Aboutus />} />
           <Route exact path='/contactus' element={<ContactUs />} />
-          <Route exact path='/travelplanning' element={<Travelplanning />} />
+          <Route exact path='/travelbooking' element={<Travelbooking />} />
         </Routes>
       </div>
     </Router>

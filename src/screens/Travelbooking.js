@@ -570,7 +570,7 @@ export default function Home() {
         ],
         Bhubaneswar: [
             {
-                name: "Bhubaneswar Grand Hotel",
+                name: "Bhubaneswar Rand Hotel",
                 location: "Bhubaneswar, India",
                 rating: "★★★★",
                 weather: "Sunny, 27°C",
@@ -601,7 +601,7 @@ export default function Home() {
             }
         ],
     };
-
+    
     const handleSearch = () => {
         const country = countries[countryInput];
         if (country) {

@@ -1,17 +1,7 @@
 import React, { useEffect } from 'react';
-import '../styles/Hotelbooking.css'
+import '../styles/Homepage.css';
 import Dashboard from '../components/Dashboard';
 import Footer from '../components/Footer';
-import Chatbot from '../components/Chatbot';
-import SupermarketSearch from '../components/Supermarket';
-import HotelSearch from '../components/Hotels';
-import PoliceStationSearch from '../components/Police';
-import BusStopSearch from '../components/Busstops';
-import AttractionSearch from '../components/Attractions';
-import TrainSearch from '../components/Trainfind';
-import WeatherReport from '../components/Weather';
-import MapView from '../components/Map';
-import RoutingMap from '../components/Routinggps';
 
 export default function Hotelbooking() {
   
@@ -68,36 +58,6 @@ export default function Hotelbooking() {
             <span className="carousel-control-next-icon" aria-hidden="true"></span>
             <span className="visually-hidden">Next</span>
           </button>
-        </div>
-        <div>
-          <WeatherReport/>
-        </div>
-        <div>
-          <SupermarketSearch/>
-        </div>
-        <div>
-          <HotelSearch/>
-        </div>
-        <div>
-          <PoliceStationSearch/>
-        </div>
-        <div>
-          <TrainSearch/>
-        </div>
-        <div>
-          <BusStopSearch/>
-        </div>
-        <div>
-          <AttractionSearch/>
-        </div>
-        <div>
-          <Chatbot/>
-        </div>
-        <div>
-          <MapView/>
-        </div>
-        <div>
-          <RoutingMap/>
         </div>
       </div>
       <Footer />
