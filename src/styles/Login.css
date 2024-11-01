@@ -1,0 +1,139 @@
+/* Login Background */
+.login-background {
+  background-image: url('../assests/images/login.jpg'); /* Set the path to your image */
+  background-size: cover; /* Ensures the image covers the container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* Keeps the background in place during scroll */
+  height: 100vh; /* Makes the div take up the full viewport height */
+  display: flex;
+  justify-content: center; /* Centers the form horizontally */
+  align-items: center; /* Centers the form vertically */
+  animation: fadeIn 1s ease-in-out; /* Fade in animation */
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Styling for the entire login background */
+.login-background {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  animation: fadeIn 1.2s ease-in; /* Fades in the background */
+}
+
+/* Styling for the container that holds the form */
+.login-container {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  text-align: center;
+  animation: slideUp 0.8s ease-out; /* Slide up effect on load */
+}
+
+/* Styling for the h2 tag */
+.login-heading {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Styling for the form-group divs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for the labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Styling for the inputs */
+input.form-control {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease-in-out; /* Smooth transition on focus */
+}
+
+/* Input focus effect */
+input.form-control:focus {
+  border-color: #28a745;
+  outline: none;
+}
+
+/* Button styling */
+.m-3.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  animation: buttonPulse 2s infinite ease-in-out; /* Pulse animation */
+  transition: opacity 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+/* Success and danger buttons */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* Button hover effects */
+.m-3.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.02); /* Slight grow effect on hover */
+}
+
+/* Button active effects */
+.m-3.btn:active {
+  transform: scale(0.98); /* Slight shrink effect on click */
+  transition: transform 0.1s ease;
+}
