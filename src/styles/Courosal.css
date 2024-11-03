@@ -1,0 +1,31 @@
+/* App.css or Courosal.css */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the page fills the full height */
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps navbar above the carousel */
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps footer above other content */
+}
+.carousel-wrapper {
+  flex-grow: 1; /* Ensures the carousel takes up the remaining space between navbar and footer */
+  margin-top: 70px; /* Adjust based on navbar height */
+  margin-bottom: 70px; /* Adjust based on footer height */
+}
+.carousel-inner img {
+  height: 600px; /* Set carousel height */
+  object-fit: cover;
+}

@@ -1,0 +1,49 @@
+/* Styles for the footer section */
+footer {
+    background-color: #ffffff; /* Change to white background for a lighter footer */
+    border-top: 1px solid #e0e0e0; /* Light border for separation */
+    padding: 20px; /* Padding for the footer */
+  }
+  
+  /* Styles for the column containing the link and text */
+  footer .col-md-4 {
+    flex: 1; /* Allows the column to grow and fill space */
+    display: flex; /* Make the column a flex container */
+    align-items: center; /* Center items vertically */
+  }
+  
+  /* Link styles */
+  footer a {
+    color: #007bff; /* Keep link color as blue */
+    text-decoration: none; /* Remove underline */
+    margin-right: 10px; /* Space between link and text */
+    font-size: 16px; /* Font size for the link */
+  }
+  
+  footer a:hover {
+    text-decoration: underline; /* Underline link on hover */
+    color: aquamarine;
+  }
+  
+  /* Muted text style */
+  footer span {
+    font-size: 14px; /* Font size for the copyright text */
+    color: #7a7a7a; /* Change to a lighter muted color */
+    margin-left: auto; /* Push copyright text to the right */
+  }
+  
+  @media (max-width: 768px) {
+    footer {
+      text-align: center; /* Center text on small screens */
+    }
+  
+    footer .col-md-4 {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center items */
+    }
+  
+    footer span {
+      margin-top: 10px; /* Add spacing between link and text on small screens */
+    }
+  }
+  
