@@ -12,7 +12,7 @@ import Hotelbooking from './screens/Hotelbooking';
 import Aboutus from './screens/Aboutus';
 import ContactUs from './screens/Contact Us';
 import Travelbooking from './screens/Travelbooking';
-import Functionality from './screens/Location';
+import Nearby from './screens/Nearby';
 import { useEffect } from 'react';
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
           <Route exact path='/aboutus' element={<Aboutus />} />
           <Route exact path='/contactus' element={<ContactUs />} />
           <Route exact path='/travelbooking' element={<Travelbooking />} />
-          <Route exact path='/Functionality' element={<Functionality />} />
+          <Route exact path='/Nearby' element={<Nearby />} />
         </Routes>
       </div>
     </Router>
