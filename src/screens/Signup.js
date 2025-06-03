@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/signup.css'; // Keep the external CSS if needed for additional styling
+import { Link, useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';//Reuse the same Navbar component
+import '../styles/signup.css';
 
 export default function Signup() {
   const [credentials, setCredentials] = useState({
@@ -9,9 +10,13 @@ export default function Signup() {
     password: "",
     geolocation: ""
   });
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+    
     try {
       const response = await fetch("http://localhost:5000/api/createuser", {
         method: 'POST',
@@ -27,17 +32,17 @@ export default function Signup() {
       });
 
       const json = await response.json();
-      console.log(json);
 
       if (!json.success) {
-        alert("Enter valid details");
-      } else {
-        alert("Signup successful!");
-        // Optionally, redirect to login or another page
+        throw new Error(json.message || "Enter valid details");
       }
+      
+      alert("Signup successful!");
+      navigate('/login'); // Redirect to login after successful signup
     } catch (error) {
-      console.error("Error during signup:", error);
-      alert("Something went wrong! Please try again.");
+      alert(error.message || "Something went wrong! Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -46,113 +51,73 @@ export default function Signup() {
   };
 
   return (
-    <div className="signup-background">
-      <form onSubmit={handleSubmit} style={{
-        backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        padding: '30px',
-        borderRadius: '10px',
-        boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
-        width: '350px',
-        textAlign: 'center'
-      }}>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            value={credentials.name}
-            onChange={onChange}
-            required
-          />
+    <>
+      <Navbar />
+      <div className="signup-background">
+        <div className="signup-container">
+          <h2 className="signup-heading">Create Account</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                placeholder="Enter your full name"
+                value={credentials.name}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter your email"
+                value={credentials.email}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                className="form-control"
+                name="password"
+                placeholder="Create a password"
+                value={credentials.password}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="geolocation">Location</label>
+              <input
+                type="text"
+                className="form-control"
+                name="geolocation"
+                placeholder="Enter your location"
+                value={credentials.geolocation}
+                onChange={onChange}
+                required
+              />
+            </div>
+            <button 
+              type="submit" 
+              className="btn btn-success"
+              disabled={isLoading}
+            >
+              {isLoading ? 'Creating account...' : 'Sign Up'}
+            </button>
+            <Link to='/login' className="btn btn-danger">
+              Already have an account? Login
+            </Link>
+          </form>
         </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            name="email"
-            value={credentials.email}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            value={credentials.password}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="geolocation">Location</label>
-          <input
-            type="text"
-            className="form-control"
-            name="geolocation"
-            value={credentials.geolocation}
-            onChange={onChange}
-            required
-          />
-        </div>
-        <button type="submit" className="m-3 btn btn-success">Submit</button>
-        <Link to='/login' className='m-3 btn btn-danger'>Already a User</Link>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
-
-
-// import React,{useState} from 'react'
-// import { Link } from 'react-router-dom'
-// export default function Signup() {
-//   const [credentials, setcredentials] = useState({name:"",email:"",password:"",geolocation:""})
-//   const handleSubmit=async(e)=>{
-//       e.preventDefault();
-//       const response =await fetch("https://localhost:5000/api/createuser",{
-//         method:'POST',
-//         headers:{
-//           'Content-Type':'application/json'
-//         },
-//         body:JSON.stringify({name:credentials.name,email:credentials.email,password:credentials.password,location:credentials.geolocation})
-//       });
-//       const json = await response.json()
-//       console.log(json);
-
-//       if (!json.success){
-//         alert("enter valid")
-//       }
-
-//   }
-//   const onchange=(event)=>{
-//     setcredentials({...credentials,[event.target.name]:event.target.value})
-//   }
-//   return (
-//     <div>
-//       <form onSubmit={handleSubmit}>
-//   <div className="form-group">
-//     <label htmlFor="name">Name</label>
-//     <input type="text" className="form-control" name="name" value={credentials.name} onChange={onchange}/>
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="email">Email</label>
-//     <input type="text" className="form-control" name='email' value={credentials.email} onChange={onchange}/>
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="password">Password</label>
-//     <input type="text" className="form-control" name='password' value={credentials.password} onChange={onchange}/>
-//   </div>
-//   <div className="form-group">
-//     <label htmlFor="geolocation">Location</label>
-//     <input type="text" className="form-control" name='geolocation' value={credentials.geolocation} onChange={onchange}/>
-//   </div>
-//   <button type="submit" className=" m-3 btn btn-success">Submit</button>
-//   <Link to = '/login' className='m-3 btn btn-danger'>Already a User</Link>
-// </form>
-//     </div>
-//   )
-// }

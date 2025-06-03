@@ -1,121 +1,80 @@
-/* Login Background */
+/* Background with image and animations */
 .login-background {
-  background-image: url('../assests/images/login.jpg'); /* Set the path to your image */
-  background-size: cover; /* Ensures the image covers the container */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-attachment: fixed; /* Keeps the background in place during scroll */
-  height: 100vh; /* Makes the div take up the full viewport height */
-  display: flex;
-  justify-content: center; /* Centers the form horizontally */
-  align-items: center; /* Centers the form vertically */
-  animation: fadeIn 1s ease-in-out; /* Fade in animation */
-}
-
-/* Animations */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes buttonPulse {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-/* Styling for the entire login background */
-.login-background {
+  background-image: url("../assests/images/login.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f0f0f0;
-  animation: fadeIn 1.2s ease-in; /* Fades in the background */
 }
 
-/* Styling for the container that holds the form */
+/* Login container styling */
 .login-container {
-  background-color: white;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  text-align: center;
-  animation: slideUp 0.8s ease-out; /* Slide up effect on load */
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  margin: 1rem;
 }
 
-/* Styling for the h2 tag */
+/* Heading style */
 .login-heading {
   font-size: 2rem;
   color: #333;
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
 }
 
-/* Styling for the form-group divs */
+/* Form group styling */
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 1.25rem;
 }
 
-/* Styling for the labels */
-label {
+.form-group label {
   display: block;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #555;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+  text-align: left;
 }
 
-/* Styling for the inputs */
-input.form-control {
+/* Input styling */
+.form-control {
   width: 100%;
-  padding: 10px;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 6px;
+  border: 1px solid #ddd;
   box-sizing: border-box;
-  transition: border-color 0.3s ease-in-out; /* Smooth transition on focus */
 }
 
-/* Input focus effect */
-input.form-control:focus {
+.form-control:focus {
   border-color: #28a745;
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
   outline: none;
 }
 
 /* Button styling */
-.m-3.btn {
+.btn {
   width: 100%;
-  padding: 10px;
-  font-size: 1.1rem;
-  border-radius: 4px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
   border: none;
   cursor: pointer;
-  animation: buttonPulse 2s infinite ease-in-out; /* Pulse animation */
-  transition: opacity 0.3s ease-in-out; /* Smooth hover transition */
+  transition: all 0.3s ease;
+  margin: 0.5rem 0;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
 }
 
-/* Success and danger buttons */
 .btn-success {
   background-color: #28a745;
   color: white;
@@ -126,14 +85,40 @@ input.form-control:focus {
   color: white;
 }
 
-/* Button hover effects */
-.m-3.btn:hover {
+.btn:hover {
+  transform: scale(1.02);
   opacity: 0.9;
-  transform: scale(1.02); /* Slight grow effect on hover */
 }
 
-/* Button active effects */
-.m-3.btn:active {
-  transform: scale(0.98); /* Slight shrink effect on click */
-  transition: transform 0.1s ease;
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  transform: none;
+  animation: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes buttonPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
 }

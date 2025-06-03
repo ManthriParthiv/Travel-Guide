@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Link } from "react-router-dom";
 import '../App.css';
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
         <div className="hero-content">
           <h1>✈️ Ultimate Travel Guide</h1>
           <p className="hero-subtitle">Experience seamless travel planning for your next adventure</p>
-          <a href="#features" className="cta-button">Start Your Journey →</a>
+          <Link to="/login" className="cta-button">Start Your Journey →</Link>
         </div>
       </section>
 
