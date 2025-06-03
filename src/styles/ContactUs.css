@@ -1,56 +1,83 @@
-.contact-us-background {
-    background-color: #f9f9f9; /* Soft background color */
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
+/* Add padding to account for fixed navbar */
+body {
+    padding-top: 56px;
 }
 
-h2 {
-    text-align: center;
+/* Hero section styles */
+.contact-hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../assests/images/travelhome.jpg");
+    background-size: cover;
+    background-position: center;
+    margin-top: -56px; /* Counteract body padding for full-width hero */
+    padding-top: 56px; /* Re-add the space we removed */
+}
+
+/* Contact card styles */
+.contact-method {
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-method a {
     color: #333;
-}
-
-.contact-info {
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.contact-info h3 {
-    color: #0073e6; /* Accent color */
-}
-
-.contact-info p {
-    line-height: 1.6;
-}
-
-.contact-info img {
-    vertical-align: middle;
-    margin-right: 8px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
-ul li {
-    margin: 10px 0;
-}
-
-ul li a {
     text-decoration: none;
-    color: #0073e6;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-ul li a:hover {
-    color: #005bb5; /* Darker shade on hover */
+.contact-method a:hover {
+    color: #0d6efd;
+    text-decoration: underline;
 }
 
-.footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #777;
+.social-links img {
+    transition: transform 0.3s ease;
+}
+
+.social-links img:hover {
+    transform: scale(1.1);
+}
+
+/* Card hover effect */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Form styles */
+.form-control {
+    border-radius: 0.25rem;
+    padding: 0.75rem 1rem;
+}
+
+.btn-primary {
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .contact-hero p {
+        font-size: 1rem;
+    }
+    
+    .contact-method {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact-method i, 
+    .contact-method img {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
 }

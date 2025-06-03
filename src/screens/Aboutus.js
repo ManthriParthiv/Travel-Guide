@@ -1,37 +1,99 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import '../styles/Aboutus.css'
-export default function Home() {
+import '../styles/Aboutus.css';
+
+export default function AboutUs() {
     return (
-      <div className="About-us-background">
-        <div><Navbar/></div>
-        <div>.</div>
-        <div>.</div>
-        <div>.</div>
-        <h1>Welcome to  Ultimate Travel Guide!</h1>
-    <p>At [Travel-Guide], we are a dedicated trio brought together by our passion for travel and technology. With a focus on both stunning visuals and seamless functionality, we aim to provide you with a comprehensive travel guide that helps you discover the hidden gems of the world. Our mission is to inspire you to travel smarter and experience more, whether you're a seasoned adventurer or planning your first trip.</p>
+        <div className="d-flex flex-column min-vh-100">
+            <Navbar />
+            
+            <main className="container-fluid p-0 flex-grow-1">
+                {/* Hero Section */}
+                <section className="about-hero bg-dark text-white text-center py-5">
+                    <div className="container py-5">
+                        <h1 className="display-4 fw-bold mb-4">Welcome to Travel Guide</h1>
+                        <p className="lead mb-0">
+                            We are a passionate team dedicated to creating the ultimate travel planning experience.
+                        </p>
+                    </div>
+                </section>
 
-    <h2>Meet Our Team:</h2>
+                {/* Content Section */}
+                <div className="container my-5">
+                    {/* Our Story */}
+                    <section className="mb-5">
+                        <h2 className="text-center mb-4">Our Story</h2>
+                        <p className="text-center mx-auto" style={{maxWidth: "800px"}}>
+                            Founded by three friends who shared a love for exploration, Ultimate Travel Guide 
+                            began as a class project and grew into a comprehensive platform. We've combined our 
+                            diverse skills to build a tool that helps travelers experience destinations more deeply.
+                        </p>
+                    </section>
 
-    <div class="team-member">
-        <h3>1.Manohar – Frontend Developer & UI/UX Designer</h3>
-        <p>Manohar is the creative force behind our website’s look and feel. With a strong background in frontend development and design, he transforms ideas into visually appealing and user-friendly interfaces. His expertise in HTML, CSS, and JavaScript ensures that every page is not only aesthetically pleasing but also intuitive to navigate. Manohar conducts user research to understand our audience's needs, allowing him to create engaging experiences that make planning your next adventure enjoyable.</p>
-    </div>
+                    {/* Team Section */}
+                    <section className="mb-5">
+                        <h2 className="text-center mb-5">Meet The Team</h2>
+                        
+                        <div className="row g-4">
+                            {/* Team Member 1 */}
+                            <div className="col-md-4">
+                                <div className="card h-100 shadow-sm">
+                                    <div className="card-body">
+                                        <h3 className="card-title text-primary">Manohar</h3>
+                                        <h6 className="card-subtitle mb-3 text-muted">Frontend Developer & UI/UX Designer</h6>
+                                        <p className="card-text">
+                                            I build the visual identity and user experience of our platform. With expertise 
+                                            in React and user-centered design,
+                                             transformed complex travel data into interactive interfaces.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Team Member 2 */}
+                            <div className="col-md-4">
+                                <div className="card h-100 shadow-sm">
+                                    <div className="card-body">
+                                        <h3 className="card-title text-primary">Kommaram Sai</h3>
+                                        <h6 className="card-subtitle mb-3 text-muted">Frontend Developer </h6>
+                                        <p className="card-text">
+                                            I  Combined graphic design with frontend development, ensuring every
+                                             visual element enhances the travel planning experience.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Team Member 3 */}
+                            <div className="col-md-4">
+                                <div className="card h-100 shadow-sm">
+                                    <div className="card-body">
+                                        <h3 className="card-title text-primary">Parthiv</h3>
+                                        <h6 className="card-subtitle mb-3 text-muted"> Full-Stack Developer </h6>
+                                        <p className="card-text">
+                                            I Build the robust systems that power our platform. Specializing in
+                                             database optimization and API development,
+                                             ensuring reliable access to comprehensive travel information.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
 
-    <div class="team-member">
-        <h3>2. Sai – Frontend Developer & Visual Content Specialist</h3>
-        <p>Sai complements Manohar’s work by focusing on the visual content and overall user experience. With skills in graphic design and frontend development,Sai is responsible for creating and integrating eye-catching images and multimedia elements that enhance our travel stories. They work closely with Manohar to ensure a cohesive design across the site, while also optimizing visual content for fast loading times. Sai is passionate about storytelling through visuals, helping to transport our readers to the destinations we feature.</p>
-    </div>
-
-    <div class="team-member">
-        <h3>3.Parthiv – Backend Developer & Data Specialist</h3>
-        <p>Parthiv is the backbone of our website, handling everything behind the scenes. With a robust understanding of backend technologies,Parthiv develops and maintains the server, databases, and APIs that power our site. They ensure that our content is stored securely and delivered efficiently to our users. Parthiv is also responsible for implementing features such as user authentication, data management, and performance optimization. Their meticulous attention to detail ensures that our site runs smoothly, providing visitors with a seamless experience as they explore our travel guides and tips.</p>
-    </div>
-
-    <p>Together, we strive to make [Travel-Guide] a go-to resource for travel lovers everywhere. Join us on this journey as we explore the world, share our experiences, and help you create unforgettable memories. Happy travels!</p>
-
-        <div><Footer/></div>
-      </div>  
+                    {/* Closing Section */}
+                    <section className="bg-light p-5 rounded-3 text-center">
+                        <p className="lead mb-0">
+                            We're committed to providing accurate, up-to-date information in an engaging format. 
+                            Whether you're a seasoned traveler or planning your first trip, we're here to make 
+                            your journey unforgettable.
+                        </p>
+                    </section>
+                </div>
+            </main>
+            
+            <Footer />
+        </div>
     );
-  }
+}

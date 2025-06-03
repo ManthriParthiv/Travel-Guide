@@ -19,8 +19,8 @@ h1, h2, h3, p {
 }
 
 /* Hero section animation */
-.hero {
-  background-image: url('../src/assests/images/travelhome.jpg');
+.hero{
+  background-image: url("../assests/images/travelhome.jpg");
   height: 100vh;
   background-size: cover;
   display: flex;

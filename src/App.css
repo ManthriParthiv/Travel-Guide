@@ -1,364 +1,176 @@
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #507ee2;
-  overflow-x: hidden;
-  animation: fadeIn 2s ease-in-out;
+/* Base Styles */
+.home-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
 }
 
-/* Fade-in effect for the entire page */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-h1, h2, h3, p {
-  margin: 0;
-  padding: 0;
-}
-
-/* Hero section animation */
-.hero {
-  background-image: url('../src/assests/images/travelhome.jpg');
-  height: 100vh;
-  background-size: cover;
+/* Hero Section */
+.hero-section {
+  background: linear-gradient(135deg, #6B73FF 0%, #000DFF 100%);
+  color: white;
+  padding: 5rem 1rem;
+  text-align: center;
+  min-height: 60vh;
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInHero 2s ease-in-out;
-  scroll-snap-align: start;
 }
 
-#feature{
-  background-image: url('../src/assests/images/Chatbot.jpg');
-  height: 100vh;
-  background-size: cover;
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+/* Sections */
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.section-header p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Features Grid */
+.features-section {
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+/* Categories */
+.categories-section {
+  padding: 4rem 1rem;
+  background: #f9f9f9;
+}
+
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.category-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.category-card h3 {
+  color: #3498db;
+  margin-bottom: 0.5rem;
+}
+
+/* Newsletter */
+.newsletter-section {
+  padding: 4rem 1rem;
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+}
+
+.newsletter-content h2 {
+  margin-bottom: 1rem;
+}
+
+.newsletter-form {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInHero 2s ease-in-out;
-  scroll-snap-align: start;
-}
-/* Smooth background and text fade-in for hero */
-@keyframes fadeInHero {
-  from {
-    background-position: top;
-    opacity: 0;
-  }
-  to {
-    background-position: center;
-    opacity: 1;
-  }
+  max-width: 500px;
+  margin: 1.5rem auto 0;
 }
 
-/* Content section with smooth slide and fade-in animation */
-.content1 {
-  background-image: url('../src/assests/images/why.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  text-size-adjust: 100px;
-  color: white;
-  text-align: center;
-  animation: fadeIn 2s ease-in-out;
-  scroll-snap-align: start;
-}
-
-/* Content fade-in from left */
-@keyframes fadeInContent {
-  from { opacity: 0; transform: translateX(-50px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* Carousel animation */
-.carousel {
-  background-image: url('../src/assests/images/Chatbot.jpg');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-}
-
-/* Carousel item slide-in and hover effect */
-@keyframes fadeInCarousel {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
-}
-.feature {
-  background-image: url('../src/assests/images/weaterr.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px; /* Adjust this value for larger text */
-}
-
-
-.feature1{
-  background-image: url('../src/assests/images/chatbot.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-
-.feature {
-  background-image: url('../src/assests/images/time.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px; /* Adjust this value for larger text */
-}
-
-/* Individual carousel item hover scaling */
-.carousel-item {
-  min-width: 300px;
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  border-radius: 15px;
-  scroll-snap-align: start;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-size: 24px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  animation: slideInItem 1s ease forwards;
-}
-
-.feature5{
-  background-image: url('../src/assests/images/safe.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-
-.feature2{
-  background-image: url('../src/assests/images/live.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-
-.feature3{
-  background-image: url('../src/assests/images/police.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-
-.feature4{
-  background-image: url('../src/assests/images/fetch.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-
-.feature6{
-  background-image: url('../src/assests/images/save.gif');
-  height: 100vh;
-  background-size: cover;
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: center;
-  color: white;
-  text-align: center;
-  animation: fadeInCarousel 2s ease-in-out;
-  scroll-snap-align: start;
-  font-size: 24px;
-}
-/* Carousel item slide-up effect */
-@keyframes slideInItem {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.carousel-item:hover {
-  transform: scale(1.1);
-}
-
-/* Features and Categories animation with slight delay for each */
-.main-features, .popular-categories, .newsletter, .footer {
-  padding: 20px;
-  text-align: center;
-  animation: slideUp 1.5s ease-in-out;
-  opacity: 0;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-}
-
-.feature, .category {
-  margin: 20px 0;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 1s ease-in-out forwards;
-}
-
-/* Slight delay for cascading effects */
-.feature:nth-child(2), .category:nth-child(2) {
-  animation-delay: 0.3s;
-}
-.feature:nth-child(3), .category:nth-child(3) {
-  animation-delay: 0.6s;
-}
-
-/* Slide up effect for sections */
-@keyframes slideUp {
-  from { transform: translateY(50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.popular-categories{
-  background-color: #418edf;
-}
-/* Call-to-action hover effect */
-.cta {
-  background: #0f73a1;
-  color: white;
-  padding: 15px 30px;
+.newsletter-form input {
+  flex: 1;
+  padding: 0.8rem 1rem;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 4px 0 0 4px;
+  font-size: 1rem;
+}
+
+/* Buttons */
+.cta-button {
+  display: inline-block;
+  background: #FF6B6B;
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.cta:hover {
-  background: #0056b3;
-  transform: scale(1.1);
-}
-
-/* Newsletter fade-in and smooth hover */
-.newsletter input[type="email"] {
-  padding: 10px;
-  width: 60%;
-  margin-right: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  animation: fadeInUp 1.5s ease forwards;
-}
-
-.newsletter button {
-  padding: 10px 20px;
-  background: #007BFF;
-  color: white;
+  font-weight: 600;
+  transition: background 0.3s ease;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
-  animation: fadeInUp 2s ease forwards;
 }
 
-.newsletter button:hover {
-  background: #0056b3;
-  transform: scale(1.05);
+.cta-button:hover {
+  background: #FF5252;
 }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.newsletter-form .cta-button {
+  border-radius: 0 4px 4px 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 1s ease-in forwards;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  
+  .features-grid, .categories-grid {
+    grid-template-columns: 1fr;
   }
-}
-
-.newsletter{
-  background-color: #3c91ec;
-}
-
-/* Apply fade-in to sections that should animate on scroll */
-.section {
-  padding: 50px;
+  
+  .newsletter-form {
+    flex-direction: column;
+  }
+  
+  .newsletter-form input,
+  .newsletter-form .cta-button {
+    width: 100%;
+    border-radius: 4px;
+  }
+  
+  .newsletter-form .cta-button {
+    margin-top: 0.5rem;
+  }
 }

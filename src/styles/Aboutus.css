@@ -1,32 +1,98 @@
-
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    background-color: #ffffff; /* Light gray background */
-    color:rgb(0, 0, 0); /* Dark gray text */
+.about-us-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-h1 {
-    color:rgb(0, 0, 0); /* Purple for the main heading */
+.about-us-hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-size: cover;
+    color: white;
+    margin-bottom: 40px;
 }
-h2 {
-    color:rgb(0, 0, 0); /* Orange for subheadings */
+
+.about-us-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
-h3 {
-    color:rgb(0, 0, 0);
+
+.mission-statement {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
-p {
-    line-height: 1.6; /* Spacing for paragraphs */
-    color:rgb(0, 0, 0);
+
+.about-us-content {
+    padding: 0 20px;
 }
+
+.team-intro, .team-section, .closing-statement {
+    margin-bottom: 50px;
+}
+
+.team-intro h2, .team-section h2, .closing-statement h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
 .team-member {
-    margin-bottom: 20px; /* Space below each team member section */
-    padding: 15px; /* Inner spacing */
-    background: white; /* White background for team member cards */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    background: #f9f9f9;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+.member-header {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
 
+.member-header h3 {
+    color: #3498db;
+    margin: 0;
+}
 
+.role {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+.closing-statement {
+    text-align: center;
+    background: #f5f9fc;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.sign-off {
+    font-weight: bold;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .about-hero p {
+        font-size: 1rem;
+    }
+}
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}

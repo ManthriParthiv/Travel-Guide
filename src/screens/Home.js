@@ -5,85 +5,95 @@ import '../App.css';
 
 export default function Home() {
   return (
-    <div>
-      <div><Navbar /></div>
-      
-      <div className="hero" id="hero">
-        <h1><b>Welcome to Ultimate Travel Guide For Your Trip</b></h1>
-        <p><b>Experience the new way of travel around the world</b></p>
-        <a href="#main-features" className="cta"><b>Start Your Adventure</b></a>
-      </div>
-
-      <div className="content1">
-        <div className="main-features" id="main-features">
-          <h1><b>Why Should you use travel planner ?</b></h1>
+    <div className="home-container">
+      <Navbar />
+      <section className="hero-section">
+        <div className="hero-content">
+          <h1>✈️ Ultimate Travel Guide</h1>
+          <p className="hero-subtitle">Experience seamless travel planning for your next adventure</p>
+          <a href="#features" className="cta-button">Start Your Journey →</a>
         </div>
-      </div>
+      </section>
 
-      <div className="feature">
-        <h3>Proper Planning for travel</h3>
-        <p>We can travel by selecting the Location with popular nearby places</p>
-      </div>
-      
-      <div className="feature1">
-      <h3>Chatbot Guide</h3>
-      <p>It helps you to assist your trip to make more Impactful</p>
-      </div>
+      {/* Features Section */}
+      <section className="features-section" id="features">
+        <div className="section-header">
+          <h2>🌟 Why Use Our Travel Planner?</h2>
+          <p>Everything you need for a perfect trip in one place</p>
+        </div>
 
-      <div className="feature6">
-      <h3><b>Efficient Time Planning</b></h3>
-      <p>Maximize your trip by organizing your time well. A travel planner helps you plan ahead and optimize your schedule.</p>
-      </div>
+        <div className="features-grid">
+          <div className="feature-card">
+            <h3>🗺️ Smart Itinerary Planning</h3>
+            <p>Discover and organize popular locations with our intelligent trip planner.</p>
+          </div>
+          
+          <div className="feature-card">
+            <h3>🤖 AI Travel Assistant</h3>
+            <p>Get personalized recommendations and real-time assistance throughout your trip.</p>
+          </div>
 
-      <div className="feature2">
-      <h3><b>Live Weather Tracking</b></h3>
-      <p>Get informed with latest weather update using Travel Guide</p>
-      </div>
+          <div className="feature-card">
+            <h3>⏱️ Time Optimization</h3>
+            <p>Maximize your experience with perfectly scheduled activities and routes.</p>
+          </div>
 
-      <div className="feature3">
-      <h3><b>Nearby Police Station</b></h3>
-      <p>find the nearby plolice station in the particular Location</p>
-      </div>
+          <div className="feature-card">
+            <h3>🌦️ Live Weather Updates</h3>
+            <p>Stay prepared with accurate, location-specific weather forecasts.</p>
+          </div>
 
-      <div className="feature5">
-      <h3><b>Save Travel</b></h3>
-      <p>Travel to your favorite places by knowing the crime percent in surroundings</p>
-      </div>
+          <div className="feature-card">
+            <h3>👮 Safety Information</h3>
+            <p>Locate nearby police stations and safety resources in any location.</p>
+          </div>
 
-      <div className="feature4">
-      <h3><b>Find nearby Attractive Places</b></h3>
-      <p>You can search for nearby popular places near the Visited Location</p>
-      </div>
+          <div className="feature-card">
+            <h3>🔍 Nearby Attractions</h3>
+            <p>Discover hidden gems and popular spots near your destinations.</p>
+          </div>
+        </div>
+      </section>
 
-      <div className="popular-categories">
-        <h2>Popular Categories</h2>
-        <ul>
-          <li className="category">Adventure Travel</li>
-          <li className="category">Family Vacations</li>
-          <li className="category">Cultural Experiences</li>
-          <li className="category">Budget Travel Tips</li>
-        </ul>
-      </div>
+      {/* Popular Categories */}
+      <section className="categories-section">
+        <div className="section-header">
+          <h2>📌 Popular Travel Categories</h2>
+          <p>Find inspiration for your next adventure</p>
+        </div>
+        <div className="categories-grid">
+          <div className="category-card">
+            <h3>Adventure Travel</h3>
+            <p>Hiking, rafting, and adrenaline-packed experiences</p>
+          </div>
+          <div className="category-card">
+            <h3>Family Vacations</h3>
+            <p>Kid-friendly destinations and activities</p>
+          </div>
+          <div className="category-card">
+            <h3>Cultural Experiences</h3>
+            <p>Immerse yourself in local traditions</p>
+          </div>
+          <div className="category-card">
+            <h3>Budget Travel</h3>
+            <p>Smart tips for affordable adventures</p>
+          </div>
+        </div>
+      </section>
 
-      <div className="newsletter">
-        <h2>Join Our Travel Community!</h2>
-        <p>Sign up for weekly insights and inspiration.</p>
-        <input type="email" placeholder="Enter your email" />
-        <button className="cta">Subscribe</button>
-      </div>
+      {/* Newsletter */}
+      <section className="newsletter-section">
+        <div className="newsletter-content">
+          <h2 style={{color:"white"}}> 📬 Join Our Travel Community</h2>
+          <p style={{color:"white"}}>Get weekly travel inspiration, tips, and exclusive offers</p>
+          <div className="newsletter-form">
+            <input type="email" placeholder="Your email address" />
+            <button className="cta-button">Subscribe</button>
+          </div>
+        </div>
+      </section>
 
-      <div><Footer /></div>
+      <Footer />
     </div>
   );
 }
-
-const elements = document.querySelectorAll('.scroll-animate');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-    }
-  });
-});
-
-elements.forEach((el) => observer.observe(el));

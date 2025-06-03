@@ -5,112 +5,111 @@ import '../styles/ContactUs.css';
 
 export default function ContactUs() {
     return (
-        <div className="contact-us-background"> {/* Apply the class here */}
+        <div className="d-flex flex-column min-vh-100">
             <Navbar />
-            <h2>Contact Us</h2>
-            <p>We love to hear from fellow travel enthusiasts! If you have any questions, suggestions, or just want to say hi, feel free to reach out to us through any of the following methods:</p>
-
-            <div className="contact-info">
-                <h3>Email:</h3>
-                <p><i className="fas fa-envelope"></i> saikomaram7@gmail.com</p>
-
-                <h3>Phone:</h3>
-                <p><i className="fas fa-phone-alt"></i> +1 (834) 163-3522</p>
-
-                <h3>WhatsApp:</h3>
-                <p>
-                    <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp Logo" style={{ width: '20px', height: '20px' }} /> 
-                    +1 (834) 163-3522 
-                </p>
-
-                <h3>Follow Us:</h3>
-                <p>Stay connected and follow our adventures on social media:</p>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://thumbs.dreamstime.com/b/instegram-192780789.jpg" alt="Instagram Logo" style={{ width: '20px', height: '20px' }} /> Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png" alt="Facebook Logo" style={{ width: '20px', height: '20px' }} /> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://www.aps.edu/sapr/images/pnglot.comtwitterbirdlogopng139932.png/image" alt="Twitter Logo" style={{ width: '20px', height: '20px' }} /> Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
             
-            <div className="contact-info">
-                <h3>Email:</h3>
-                <p><i className="fas fa-envelope"></i> manohar1231k@gmail.com</p>
+            <main className="container-fluid p-0 flex-grow-1">
+                {/* Hero Section */}
+                <section className="contact-hero bg-dark text-white text-center py-5">
+                    <div className="container py-5">
+                        <h1 className="display-4 fw-bold mb-4">Contact Our Team</h1>
+                        <p className="lead mb-0">
+                            We're here to help with any questions about your travel plans
+                        </p>
+                    </div>
+                </section>
 
-                <h3>Phone:</h3>
-                <p><i className="fas fa-phone-alt"></i> +91-7780764510</p>
+                {/* Main Content */}
+                <div className="container my-5">
+                    <section className="mb-5 text-center">
+                        <h2 className="mb-4">Get In Touch</h2>
+                        <p className="mx-auto" style={{maxWidth: "800px"}}>
+                            Have questions about destinations, need travel advice, or want to collaborate? 
+                            Reach out to any of our team members through their preferred contact method.
+                        </p>
+                    </section>
 
-                <h3>WhatsApp:</h3>
-                <p>
-                    <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp Logo" style={{ width: '20px', height: '20px' }} /> 
-                    +91-7780764510
-                </p>
+                    {/* Team Contact Cards */}
+                    <div className="row g-4">
+                        {/* Sai's Contact */}
+                        <div className="col-md-4">
+                            <div className="card h-100 shadow-sm">
+                                <div className="card-body text-center">
+                                    <h3 className="card-title text-primary">Sai Komaram</h3>
+                                    <h6 className="card-subtitle mb-3 text-muted">Frontend Developer & Visual Specialist</h6>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-envelope me-2"></i>
+                                        <a href="mailto:saikomaram7@gmail.com">saikomaram7@gmail.com</a>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-phone-alt me-2"></i>
+                                        <span>+1 (834) 163-3522</span>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp" className="me-2" style={{width: '20px'}} />
+                                        <span>+1 (834) 163-3522</span>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
 
-                <h3>Follow Us:</h3>
-                <p>Stay connected and follow our adventures on social media:</p>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://thumbs.dreamstime.com/b/instegram-192780789.jpg" alt="Instagram Logo" style={{ width: '20px', height: '20px' }} /> Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png" alt="Facebook Logo" style={{ width: '20px', height: '20px' }} /> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://www.aps.edu/sapr/images/pnglot.comtwitterbirdlogopng139932.png/image" alt="Twitter Logo" style={{ width: '20px', height: '20px' }} /> Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                        {/* Manohar's Contact */}
+                        <div className="col-md-4">
+                            <div className="card h-100 shadow-sm">
+                                <div className="card-body text-center">
+                                    <h3 className="card-title text-primary">Manohar</h3>
+                                    <h6 className="card-subtitle mb-3 text-muted">Frontend Developer & UI/UX Designer</h6>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-envelope me-2"></i>
+                                        <a href="mailto:manohar1231k@gmail.com">manohar1231k@gmail.com</a>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-phone-alt me-2"></i>
+                                        <span>+91-7780764510</span>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp" className="me-2" style={{width: '20px'}} />
+                                        <span>+91-7780764510</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Parthiv's Contact */}
+                        <div className="col-md-4">
+                            <div className="card h-100 shadow-sm">
+                                <div className="card-body text-center">
+                                    <h3 className="card-title text-primary">Parthiv</h3>
+                                    <h6 className="card-subtitle mb-3 text-muted">Backend Developer & Data Specialist</h6>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-envelope me-2"></i>
+                                        <a href="mailto:mantriparthiv08@gmail.com">mantriparthiv08@gmail.com</a>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <i className="fas fa-phone-alt me-2"></i>
+                                        <span>+91-8886660015</span>
+                                    </div>
+                                    
+                                    <div className="contact-method">
+                                        <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp" className="me-2" style={{width: '20px'}} />
+                                        <span>+91-8886660015</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
             
-            <div className="contact-info">
-                <h3>Email:</h3>
-                <p><i className="fas fa-envelope"></i> mantriparthiv08@gmail.com</p>
-
-                <h3>Phone:</h3>
-                <p><i className="fas fa-phone-alt"></i> +91-8886660015</p>
-
-                <h3>WhatsApp:</h3>
-                <p>
-                    <img src="https://clipground.com/images/whatsapp-messenger-logo-png-2.png" alt="WhatsApp Logo" style={{ width: '20px', height: '20px' }} /> 
-                    +91-8886660015
-                </p>
-
-                <h3>Follow Us:</h3>
-                <p>Stay connected and follow our adventures on social media:</p>
-                <ul>
-                    <li>
-                        <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://thumbs.dreamstime.com/b/instegram-192780789.jpg" alt="Instagram Logo" style={{ width: '20px', height: '20px' }} /> Instagram
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-0.png" alt="Facebook Logo" style={{ width: '20px', height: '20px' }} /> Facebook
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer">
-                            <img src="https://www.aps.edu/sapr/images/pnglot.comtwitterbirdlogopng139932.png/image" alt="Twitter Logo" style={{ width: '20px', height: '20px' }} /> Twitter
-                        </a>
-                    </li>
-                </ul>
-            </div>
             <Footer />
         </div>
     );
