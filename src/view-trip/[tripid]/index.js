@@ -5,6 +5,7 @@ import { db } from '../../service/firebaseConfig';
 import Infosection from './components/infosection';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
+import Navbar2 from '../../components/Navbar2';
 
 function Viewtrip() {
     const { tripid } = useParams();
@@ -65,9 +66,12 @@ function Viewtrip() {
     }
 
     return (
+    <div>
+        <Navbar2/>
         <ErrorBoundary>
             <Infosection trip={trip} />
         </ErrorBoundary>
+    </div>
     );
 }
 

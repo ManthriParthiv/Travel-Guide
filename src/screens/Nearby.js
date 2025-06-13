@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './LocationServices.css'; // CSS file for styling
-
+import './Nearby.css'; // CSS file for styling
+import Navbar2 from '../components/Navbar2';
+import Footer from '../components/Footer';
+import Chatbot from '../components/Chatbot';
 const API_KEY = '52b70eb8d13b4775b59a4a434e01d103'; // Replace with your actual Geoapify API key
 
 const LocationServices = () => {
@@ -13,6 +15,7 @@ const LocationServices = () => {
   const [busStops, setBusStops] = useState([]);
   const [hotels, setHotels] = useState([]);
   const [policeStations, setPoliceStations] = useState([]);
+  const [chatHistory,setChatHistory] = useState([]);
 
   // Function to get user's current location
   const getUserLocation = () => {
@@ -91,6 +94,8 @@ const LocationServices = () => {
   };
 
   return (
+  <div>
+    <Navbar2/>
     <div className="location-services">
       <button className="location-button" onClick={getUserLocation}>Get My Location & Search Nearby Details</button>
       {error && <p className="error-message">{error}</p>}
@@ -155,7 +160,12 @@ const LocationServices = () => {
           ))}
         </ul>
       </div>
+      <div>
+        <Chatbot chatHistory={chatHistory} setChatHistory={setChatHistory}/>
+      </div>
     </div>
+    <Footer/>
+  </div>
   );
 };
 

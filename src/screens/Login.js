@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/Login.css';
+import Footer from '../components/Footer';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -89,6 +90,9 @@ export default function Login() {
           </form>
         </div>
       </div>
+      <div>
+        <Footer/>
+    </div>
     </>
   );
 }

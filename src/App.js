@@ -13,11 +13,13 @@ import Aboutus from './screens/Aboutus';
 import ContactUs from './screens/Contact Us';
 import Travelbooking from './screens/Travelbooking';
 import Nearby from './screens/Nearby';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import CreateTrip from './create-trip/';
 import ViewTrip from './view-trip/[tripid]';
+import Chatbot from './components/Chatbot'
 
 function App() {
+  const [chatHistory,setChatHistory] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,6 +56,9 @@ function App() {
             <Route exact path='/Nearby' element={<Nearby />} />
             <Route exact path='/view-trip/:tripid' element={<ViewTrip/>}/>
           </Routes>
+          <div>
+            <Chatbot chatHistory={chatHistory} setChatHistory={setChatHistory}/>
+          </div>
         </div>
       </Router>
     </>

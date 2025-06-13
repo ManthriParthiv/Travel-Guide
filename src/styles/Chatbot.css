@@ -1,0 +1,227 @@
+/* Chatbot Container */
+.chatbot {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #e1e8ed;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.chatbot:not(.open) {
+    transform: translateY(20px);
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Chatbot Toggle Button */
+.chatbot-toggle-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.chatbot-toggle-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(29, 161, 242, 0.4);
+}
+
+.chatbot-toggle-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Chat Window */
+.chat-window {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  background-color: #f7f9fa;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Chat Messages */
+.chat-message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  line-height: 1.4;
+  font-size: 14px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user-message {
+  align-self: flex-end;
+  background: #1da1f2;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.bot-message {
+  align-self: flex-start;
+  background: white;
+  color: #14171a;
+  border: 1px solid #e1e8ed;
+  border-bottom-left-radius: 5px;
+}
+
+/* Input Area */
+.input {
+  display: flex;
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #e1e8ed;
+}
+
+.input input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #e1e8ed;
+  border-radius: 25px;
+  outline: none;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.input input:focus {
+  border-color: #1da1f2;
+  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+.input button {
+  margin-left: 10px;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.input button:hover {
+  background: linear-gradient(135deg, #0d8ecf, #1da1f2);
+  transform: scale(1.05);
+}
+
+.input button:disabled {
+  background: #e1e8ed;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.input button svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  padding: 10px 15px;
+  background: white;
+  border-radius: 18px;
+  align-self: flex-start;
+  margin-bottom: 5px;
+  border: 1px solid #e1e8ed;
+}
+
+.typing-indicator span {
+  height: 8px;
+  width: 8px;
+  background: #657786;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0 2px;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+/* Add to your existing CSS */
+.chat-header {
+    padding: 15px;
+    background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.close-button {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.close-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Update the chatbot position when open */
+
+
+/* Add this if you want a minimize animation */

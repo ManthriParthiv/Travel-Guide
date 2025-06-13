@@ -7,6 +7,9 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { doc, setDoc } from 'firebase/firestore';
 import { db } from '../service/firebaseConfig';
 import { useNavigate} from 'react-router-dom';
+import Chatbot from '../components/Chatbot';
+import Navbar2 from '../components/Navbar2';
+import Footer from '../components/Footer';
 
 function Createtrip() {
   const [place, setplace] = useState();
@@ -15,7 +18,10 @@ function Createtrip() {
   const [selectedTravelType, setSelectedTravelType] = useState(null);  
   const [loading, setLoading] = useState(false);
   const [generatedPlan, setGeneratedPlan] = useState(null);
+  const [chatHistory,setChatHistory] = useState([]);
   const navigate = useNavigate();
+  //const GeminiapiKey = process.env.GEMENI_APP_GOOGLE_API_KEY;
+  const GoogleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
 
   const handleInputChange = (name, value) => {
     SetFormData({
@@ -44,7 +50,7 @@ function Createtrip() {
   const OnGenerate = async () => {
   setLoading(true);
   try {
-    const genAI = new GoogleGenerativeAI('AIzaSyAVsnRfpQJx5gbAsRX4ec9CDncStppnrBw');
+    const genAI = new GoogleGenerativeAI('Place gemini api here');
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const chat = model.startChat({ history: [] });
@@ -114,6 +120,8 @@ const SaveAItrip = async (TripData) => {
   };
 
   return (
+    <div>
+      <Navbar2/>
     <div className="trip-planner-container">
       <h1 className="page-title">Plan Your Perfect Trip</h1>
       
@@ -121,7 +129,7 @@ const SaveAItrip = async (TripData) => {
         <h2 className="section-title">Enter The Place to Travel:</h2>
         <div className="input-container">
           <GooglePlacesAutocomplete
-            apiKey={'AIzaSyAuPNUzMBGeXjT6evFrC7CC7NYx5MVsdog'}
+            apiKey={GoogleMapsApiKey}
             selectProps={{
               place,
               onChange: (v) => { setplace(v); handleInputChange('location', v) },
@@ -195,6 +203,11 @@ const SaveAItrip = async (TripData) => {
         </div>
       )}
     </div>
+  <div>
+    <Chatbot chatHistory={chatHistory} setChatHistory={setChatHistory}/>
+  </div>
+    <Footer/>
+</div>
   );
 }
 

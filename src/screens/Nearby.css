@@ -1,0 +1,156 @@
+/* LocationServices.css */
+
+/* Base Styles */
+.location-services {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #333;
+}
+
+/* Header and Buttons */
+.location-button {
+  background-color: #4a6fa5;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.location-button:hover {
+  background-color: #3a5a8f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.fetch-button {
+  background-color: #f8f9fa;
+  color: #4a6fa5;
+  border: 2px solid #4a6fa5;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-bottom: 1rem;
+}
+
+.fetch-button:hover {
+  background-color: #e9ecef;
+}
+
+/* Error Message */
+.error-message {
+  color: #dc3545;
+  background-color: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 1.5rem;
+}
+
+/* Location Coordinates */
+.location-coordinates {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  border-left: 4px solid #4a6fa5;
+}
+
+.location-coordinates h3 {
+  margin-top: 0;
+  color: #4a6fa5;
+}
+
+/* Map Section */
+.map-section {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.map-section h2 {
+  color: #4a6fa5;
+  margin-bottom: 1rem;
+}
+
+.map-section img {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Data Sections */
+.data-section {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.data-section h3 {
+  color: #4a6fa5;
+  margin-top: 0;
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+}
+
+.data-section ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.data-section li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-section li:last-child {
+  border-bottom: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .location-services {
+    padding: 1rem;
+  }
+  
+  .location-button {
+    width: 100%;
+    padding: 14px;
+  }
+  
+  .data-section {
+    padding: 1rem;
+  }
+}
+
+/* Loading State (Add if you implement loading indicators) */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+  border-top-color: #4a6fa5;
+  animation: spin 1s ease-in-out infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

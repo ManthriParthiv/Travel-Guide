@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../components/Navbar';//Reuse the same Navbar component
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import '../styles/signup.css';
 
 export default function Signup() {
@@ -118,6 +119,9 @@ export default function Signup() {
           </form>
         </div>
       </div>
+      <div>
+        <Footer/>
+    </div>
     </>
   );
 }
