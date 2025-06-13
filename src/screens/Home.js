@@ -49,7 +49,7 @@ export default function Home() {
             <p>Locate nearby police stations and safety resources in any location.</p>
           </div>
 
-          <div className="feature-card">
+          <div className="feature-card">  
             <h3>🔍 Nearby Attractions</h3>
             <p>Discover hidden gems and popular spots near your destinations.</p>
           </div>

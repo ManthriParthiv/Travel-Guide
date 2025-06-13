@@ -30,7 +30,7 @@ export default function Login() {
         throw new Error(data.message || 'Invalid credentials');
       }
       
-      navigate('/');
+      navigate('/create-trip'); //navite to location
     } catch (error) {
       alert(error.message || 'Login failed. Please try again.');
     } finally {

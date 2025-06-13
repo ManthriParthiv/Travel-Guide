@@ -9,12 +9,13 @@ import {
   Route
 } from "react-router-dom";
 import Signup from './screens/Signup';
-import Hotelbooking from './screens/Hotelbooking';
 import Aboutus from './screens/Aboutus';
 import ContactUs from './screens/Contact Us';
 import Travelbooking from './screens/Travelbooking';
 import Nearby from './screens/Nearby';
 import { useEffect } from 'react';
+import CreateTrip from './create-trip/';
+import ViewTrip from './view-trip/[tripid]';
 
 function App() {
   useEffect(() => {
@@ -46,11 +47,12 @@ function App() {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/login' element={<Login />} />
             <Route exact path='/signup' element={<Signup />} />
-            <Route exact path='/hotelbooking' element={<Hotelbooking />} />
+            <Route exact path='/create-trip' element={<CreateTrip />} />
             <Route exact path='/aboutus' element={<Aboutus />} />
             <Route exact path='/contactus' element={<ContactUs />} />
             <Route exact path='/travelbooking' element={<Travelbooking />} />
             <Route exact path='/Nearby' element={<Nearby />} />
+            <Route exact path='/view-trip/:tripid' element={<ViewTrip/>}/>
           </Routes>
         </div>
       </Router>
