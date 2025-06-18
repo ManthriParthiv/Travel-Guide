@@ -20,8 +20,9 @@ function Createtrip() {
   const [generatedPlan, setGeneratedPlan] = useState(null);
   const [chatHistory,setChatHistory] = useState([]);
   const navigate = useNavigate();
-  //const GeminiapiKey = process.env.GEMENI_APP_GOOGLE_API_KEY;
+
   const GoogleMapsApiKey = process.env.REACT_APP_GOOGLE_API_KEY;
+
 
   const handleInputChange = (name, value) => {
     SetFormData({
@@ -50,7 +51,11 @@ function Createtrip() {
   const OnGenerate = async () => {
   setLoading(true);
   try {
-    const genAI = new GoogleGenerativeAI('Place gemini api here');
+    const genAI = new GoogleGenerativeAI(
+   process.env.REACT_APP_GEMINI_API_KEY,
+);
+
+    console.log("API KEY:", process.env.REACT_APP_GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
     const chat = model.startChat({ history: [] });
