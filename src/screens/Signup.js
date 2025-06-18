@@ -19,11 +19,11 @@ export default function Signup() {
     setIsLoading(true);
     
     try {
-      const response = await fetch("http://localhost:5000/api/createuser", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
+  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/createuser`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
         body: JSON.stringify({
           name: credentials.name,
           email: credentials.email,
