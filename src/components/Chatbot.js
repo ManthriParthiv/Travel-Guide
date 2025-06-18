@@ -81,7 +81,7 @@ const Chatbot = ({ chatHistory = [], setChatHistory }) => {
         setIsTyping(true);
 
         try {
-            const groqApiKey = process.env.REACT_APP_GROQ_API_KEY || "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";
+            const groqApiKey = process.env.REACT_APP_GROQ_API_KEY;
 
             const messages = [
                 { role: "system", content: travelPlannerContext },
