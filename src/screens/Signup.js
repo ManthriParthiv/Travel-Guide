@@ -19,7 +19,7 @@ export default function Signup() {
   setIsLoading(true);
 
   try {
-    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/createuser`, {
+    const response = await fetch(`https://travel-guide-kp2f.onrender.com/api/createuser`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
