@@ -8,7 +8,7 @@ const mongoDB = require('./db');
 // ✅ CORS setup for both localhost and Vercel frontend
 const allowedOrigins = [
   "http://localhost:3000",
-  "https://your-vercel-app.vercel.app" // 🔁 Replace with your actual deployed frontend URL
+  "https://travel-guide-six-sigma.vercel.app"
 ];
 
 app.use((req, res, next) => {
