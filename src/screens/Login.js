@@ -13,32 +13,39 @@ export default function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/loginuser`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      });
-      
-      const data = await response.json();
-      
-      if (!data.success) {
-        throw new Error(data.message || 'Invalid credentials');
-      }
-      
-      navigate('/create-trip'); //navite to location
-    } catch (error) {
-      alert(error.message || 'Login failed. Please try again.');
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  e.preventDefault();
+  setIsLoading(true);
 
+  try {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/loginuser`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(credentials),
+    });
+
+    const text = await response.text(); 
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch (err) {
+      throw new Error("Invalid server response (not JSON)");
+    }
+
+    if (!response.ok || !data.success) {
+      throw new Error(data.message || 'Login failed');
+    }
+
+    // Success
+    navigate('/create-trip');
+  } catch (error) {
+    alert(error.message || 'Login failed. Please try again.');
+  } finally {
+    setIsLoading(false);
+  }
+};
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials(prev => ({ ...prev, [name]: value }));

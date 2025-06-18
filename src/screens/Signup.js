@@ -15,37 +15,45 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-    
+  e.preventDefault();
+  setIsLoading(true);
+
+  try {
+    const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/createuser`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: credentials.name,
+        email: credentials.email,
+        password: credentials.password,
+        location: credentials.geolocation,
+      }),
+    });
+
+    const text = await response.text(); 
+    let json;
+
     try {
-  const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/createuser`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-        body: JSON.stringify({
-          name: credentials.name,
-          email: credentials.email,
-          password: credentials.password,
-          location: credentials.geolocation
-        })
-      });
-
-      const json = await response.json();
-
-      if (!json.success) {
-        throw new Error(json.message || "Enter valid details");
-      }
-      
-      alert("Signup successful!");
-      navigate('/login'); // Redirect to login after successful signup
-    } catch (error) {
-      alert(error.message || "Something went wrong! Please try again.");
-    } finally {
-      setIsLoading(false);
+      json = JSON.parse(text);
+    } catch (err) {
+      throw new Error("Invalid server response");
     }
-  };
+
+    if (!response.ok || !json.success) {
+      throw new Error(json.message || "Signup failed");
+    }
+
+    alert("Signup successful!");
+    navigate('/login');
+  } catch (error) {
+    alert(error.message || "Something went wrong! Please try again.");
+  } finally {
+    setIsLoading(false);
+  }
+};
+
 
   const onChange = (event) => {
     setCredentials({ ...credentials, [event.target.name]: event.target.value });
