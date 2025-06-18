@@ -3,54 +3,63 @@ const router = express.Router();
 const User = require("../models/Users");
 const { body, validationResult } = require("express-validator");
 
-
+// Create User Route
 router.post(
   "/createuser",
   [
     body("email").isEmail(),
     body("name").isLength({ min: 5 }),
-    body("password", "Insufficient Length").isLength({ min: 6 }),
+    body("password", "Password must be at least 6 characters").isLength({ min: 6 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ error: errors.array() });
+      return res.status(400).json({ success: false, errors: errors.array() });
     }
+
     try {
       await User.create({
         name: req.body.name,
         password: req.body.password,
         email: req.body.email,
         location: req.body.location,
-      }).then(res.json({ success: true }));
+      });
+
+      return res.json({ success: true });
     } catch (error) {
-      console.log(error);
-      res.json(false);
+      console.error("Error creating user:", error);
+      return res.status(500).json({ success: false, error: "User creation failed" });
     }
   }
 );
-router.post("/loginuser",[
+
+// Login User Route
+router.post(
+  "/loginuser",
+  [
     body("email").isEmail(),
-    body("password", "Insufficient Length").isLength({ min: 6 })]
-    ,async (req, res) => {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ error: errors.array() });
-      }
-      let email = req.body.email;
-      try {
-        let userData = await User.findOne({ email });
-        if (!userData) {
-          return res.status(400).json({ errors: "Enter correct credentials" });
-        }
-        if (req.body.password !== userData.password) {
-          return res.status(400).json({ errors: "Enter correct credentials" });
-        }
-        return res.json({ success: true });
-      } catch (error) {
-        console.log(error);
-        res.json(false);
-      }
+    body("password", "Password must be at least 6 characters").isLength({ min: 6 })
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ success: false, errors: errors.array() });
     }
-  );
+
+    const { email, password } = req.body;
+
+    try {
+      const userData = await User.findOne({ email });
+      if (!userData || userData.password !== password) {
+        return res.status(400).json({ success: false, message: "Invalid credentials" });
+      }
+
+      return res.json({ success: true });
+    } catch (error) {
+      console.error("Login error:", error);
+      return res.status(500).json({ success: false, error: "Login failed" });
+    }
+  }
+);
+
 module.exports = router;
