@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import '../styles/Login.css';
 import Footer from '../components/Footer';
+import { auth } from '../service/firebaseConfig';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function Login() {
   const [credentials, setCredentials] = useState({
@@ -17,21 +19,10 @@ export default function Login() {
     setIsLoading(true);
     
     try {
-      const response = await fetch(`https://travel-guide-kp2f.onrender.com/api/loginuser`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(credentials)
-      });
+      // Authenticate via Firebase Auth
+      await signInWithEmailAndPassword(auth, credentials.email, credentials.password);
       
-      const data = await response.json();
-      
-      if (!data.success) {
-        throw new Error(data.message || 'Invalid credentials');
-      }
-      
-      navigate('/create-trip'); //navite to location
+      navigate('/create-trip'); // Navigate to create trip screen
     } catch (error) {
       alert(error.message || 'Login failed. Please try again.');
     } finally {
@@ -45,9 +36,9 @@ export default function Login() {
   };
 
   return (
-    <>
+    <div className="page-wrapper">
       <Navbar />
-      <div className="login-background">
+      <div className="login-background content-wrapper">
         <div className="login-container">
           <h2 className="login-heading">Login</h2>
           <form onSubmit={handleSubmit}>
@@ -90,9 +81,7 @@ export default function Login() {
           </form>
         </div>
       </div>
-      <div>
-        <Footer/>
+      <Footer />
     </div>
-    </>
   );
 }

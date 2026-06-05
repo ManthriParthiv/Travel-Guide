@@ -620,59 +620,61 @@ export default function Home() {
     };
 
     return (
-        <div>
+        <div className="page-wrapper">
             <Navbar />
-            <header>
-                <h1>Hotel Booking</h1>
-            </header>
-            <main>
-                <input 
-                    type="text" 
-                    value={countryInput} 
-                    onChange={(e) => setCountryInput(e.target.value)} 
-                    placeholder="Enter City Name" 
-                />
-                <button onClick={handleSearch}>Search</button>
+            <div className="content-wrapper container py-5" style={{ marginTop: '5.5rem' }}>
+                <header>
+                    <h1>Hotel Booking</h1>
+                </header>
+                <main>
+                    <input 
+                        type="text" 
+                        value={countryInput} 
+                        onChange={(e) => setCountryInput(e.target.value)} 
+                        placeholder="Enter City Name" 
+                    />
+                    <button onClick={handleSearch}>Search</button>
 
-                {selectedCountry ? (
-                    <div>
-                        <h2>{selectedCountry.name} Hotels</h2>
-                        <div className="hotel-list">
-                            {selectedCountry.hotels.map(hotel => (
-                                <div className="hotel" key={hotel.name} onClick={() => setSelectedHotel(hotel)}>
-                                    <img src={hotel.img} alt={hotel.name} />
-                                    <h3>{hotel.name}</h3>
-                                    <p>Rating: {hotel.rating}</p>
-                                </div>
-                            ))}
-                        </div>
-                        {selectedHotel && (
-                            <div className="details">
-                                <h2>{selectedHotel.name}</h2>
-                                <p>Location: {selectedHotel.location}</p>
-                                <p>Rating: {selectedHotel.rating}</p>
-                                <p>Weather Condition: {selectedHotel.weather}</p>
-                                <h3>Rooms:</h3>
-                                <div className="room-list">
-                                    {selectedHotel.rooms.map(room => (
-                                        <div className="room" key={room.type} onClick={() => handleRoomClick(room.type)}>
-                                            <h4>{room.type}</h4>
-                                            <img src={room.img} alt={room.type} />
-                                            <p>Price: {room.price}</p>
-                                            <p>Highest Price: {room.highestPrice}</p>
-                                            <p>Lowest Price: {room.lowestPrice}</p>
-                                            <button onClick={() => handleRoomClick(room.type)}>Book Now</button>
-                                        </div>
-                                    ))}
-                                </div>
+                    {selectedCountry ? (
+                        <div>
+                            <h2>{selectedCountry.name} Hotels</h2>
+                            <div className="hotel-list">
+                                {selectedCountry.hotels.map(hotel => (
+                                    <div className="hotel" key={hotel.name} onClick={() => setSelectedHotel(hotel)}>
+                                        <img src={hotel.img} alt={hotel.name} />
+                                        <h3>{hotel.name}</h3>
+                                        <p>Rating: {hotel.rating}</p>
+                                    </div>
+                                ))}
                             </div>
-                        )}
-                        <button onClick={() => setSelectedCountry(null)}>Back to Search</button>
-                    </div>
-                ) : (
-                    <div>Please enter a city to see available hotels.</div>
-                )}
-            </main>
+                            {selectedHotel && (
+                                <div className="details">
+                                    <h2>{selectedHotel.name}</h2>
+                                    <p>Location: {selectedHotel.location}</p>
+                                    <p>Rating: {selectedHotel.rating}</p>
+                                    <p>Weather Condition: {selectedHotel.weather}</p>
+                                    <h3>Rooms:</h3>
+                                    <div className="room-list">
+                                        {selectedHotel.rooms.map(room => (
+                                            <div className="room" key={room.type} onClick={() => handleRoomClick(room.type)}>
+                                                <h4>{room.type}</h4>
+                                                <img src={room.img} alt={room.type} />
+                                                <p>Price: {room.price}</p>
+                                                <p>Highest Price: {room.highestPrice}</p>
+                                                <p>Lowest Price: {room.lowestPrice}</p>
+                                                <button onClick={() => handleRoomClick(room.type)}>Book Now</button>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+                            <button onClick={() => setSelectedCountry(null)}>Back to Search</button>
+                        </div>
+                    ) : (
+                        <div>Please enter a city to see available hotels.</div>
+                    )}
+                </main>
+            </div>
             <Footer />
         </div>
     );

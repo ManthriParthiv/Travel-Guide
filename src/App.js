@@ -1,7 +1,6 @@
 import './App.css';
 import Home from './screens/Home';
 import Login from './screens/Login';
-import axios from 'axios';
 import { Helmet } from 'react-helmet';
 import {
   BrowserRouter as Router,
@@ -13,25 +12,14 @@ import Aboutus from './screens/Aboutus';
 import ContactUs from './screens/Contact Us';
 import Travelbooking from './screens/Travelbooking';
 import Nearby from './screens/Nearby';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import CreateTrip from './create-trip/';
 import ViewTrip from './view-trip/[tripid]';
-import Chatbot from './components/Chatbot'
+import Chatbot from './components/Chatbot';
+import Tracking from './screens/Tracking';
 
 function App() {
   const [chatHistory,setChatHistory] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
-        console.log(response);
-      } catch (error) {
-        console.error('Error fetching data', error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -54,6 +42,7 @@ function App() {
             <Route exact path='/contactus' element={<ContactUs />} />
             <Route exact path='/travelbooking' element={<Travelbooking />} />
             <Route exact path='/Nearby' element={<Nearby />} />
+            <Route exact path='/tracking' element={<Tracking />} />
             <Route exact path='/view-trip/:tripid' element={<ViewTrip/>}/>
           </Routes>
           <div>

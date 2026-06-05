@@ -1,98 +1,113 @@
-.about-us-container {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #333;
-    line-height: 1.6;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Premium Glassmorphic Styles for About Us Page */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-.about-us-hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    background-size: cover;
-    color: white;
-    margin-bottom: 40px;
+.content-wrapper {
+  flex: 1 0 auto;
 }
 
-.about-us-hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+/* Hero Section */
+.about-hero {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
 }
 
-.mission-statement {
-    font-size: 1.2rem;
-    max-width: 800px;
-    margin: 0 auto;
+.about-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.8rem;
+  letter-spacing: -1.2px;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, #1e293b 30%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.about-us-content {
-    padding: 0 20px;
+.about-subtitle {
+  color: #64748b;
+  font-size: 1.15rem;
+  font-weight: 500;
+  line-height: 1.6;
 }
 
-.team-intro, .team-section, .closing-statement {
-    margin-bottom: 50px;
+/* Our Story Details */
+.story-title, .team-section-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
 }
 
-.team-intro h2, .team-section h2, .closing-statement h2 {
-    text-align: center;
-    color: #2c3e50;
-    margin-bottom: 30px;
-    font-size: 2rem;
+.story-text, .closing-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-.team-member {
-    background: #f9f9f9;
-    padding: 25px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+/* Team Member Cards */
+.team-card {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
 }
 
-.member-header {
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+.team-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(99, 102, 241, 0.2);
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.05);
 }
 
-.member-header h3 {
-    color: #3498db;
-    margin: 0;
+.team-card-body {
+  padding: 2.25rem;
 }
 
-.role {
-    font-style: italic;
-    color: #7f8c8d;
+.member-name {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  color: #1e293b;
+  font-size: 1.35rem;
+  margin: 0 0 0.4rem 0;
 }
 
-.closing-statement {
-    text-align: center;
-    background: #f5f9fc;
-    padding: 30px;
-    border-radius: 8px;
+.member-role {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #4f46e5;
+  letter-spacing: 0.5px;
 }
 
-.sign-off {
-    font-weight: bold;
-    font-style: italic;
-    margin-top: 20px;
+.member-desc {
+  margin: 1.25rem 0 0 0;
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.form-section {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
 }
 
 @media (max-width: 768px) {
-    .about-hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .about-hero p {
-        font-size: 1rem;
-    }
-}
-.card {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+  .about-title {
+    font-size: 2.2rem;
+  }
 }

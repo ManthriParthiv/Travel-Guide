@@ -1,9 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 5000;
-const API_KEY = 'a1f4f24f1c19b4815aaa1b634a70b454'; // Keep this private in production
-const mongoDB = require('./db');
+const API_KEY = process.env.WEATHER_API_KEY || 'a1f4f24f1c19b4815aaa1b634a70b454'; // Keep this private in production
 
 // ✅ CORS setup for both localhost and Vercel frontend
 const allowedOrigins = [
@@ -35,9 +35,6 @@ app.get('/', (req, res) => {
   res.send('Hello World!');
 });
 
-// 🔐 User Routes
-app.use("/api", require("./Routes/CreateUser"));
-
 // 🌦️ Weather API endpoint
 app.get('/api/weather', async (req, res) => {
   const city = req.query.city || 'London'; // Default to London
@@ -58,6 +55,17 @@ app.get('/api/weather', async (req, res) => {
 });
 
 
-app.listen(port, () => {
+const server = app.listen(port, () => {
   console.log(`✅ Server listening on port ${port}`);
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n❌ Error: Port ${port} is already in use by another process.`);
+    console.error(`💡 Solution: Configure a different PORT (e.g. PORT=5005) in your backend/.env file, or stop the existing process running on port ${port}.\n`);
+    process.exit(1);
+  } else {
+    console.error('❌ Server startup error:', err);
+    process.exit(1);
+  }
 });

@@ -3,6 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../styles/signup.css';
+import { auth, db } from '../service/firebaseConfig';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
 
 export default function Signup() {
   const [credentials, setCredentials] = useState({
@@ -15,44 +18,34 @@ export default function Signup() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
-  setIsLoading(true);
-
-  try {
-    const response = await fetch(`https://travel-guide-kp2f.onrender.com/api/createuser`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: credentials.name,
-        email: credentials.email,
-        password: credentials.password,
-        location: credentials.geolocation,
-      }),
-    });
-
-    const text = await response.text(); 
-    let json;
+    e.preventDefault();
+    setIsLoading(true);
 
     try {
-      json = JSON.parse(text);
-    } catch (err) {
-      throw new Error("Invalid server response");
-    }
+      // Step 1: Register User with Email and Password via Firebase Auth
+      const userCredential = await createUserWithEmailAndPassword(auth, credentials.email, credentials.password);
+      
+      // Step 2: Set displayName to Name
+      await updateProfile(userCredential.user, {
+        displayName: credentials.name
+      });
 
-    if (!response.ok || !json.success) {
-      throw new Error(json.message || "Signup failed");
-    }
+      // Step 3: Save user meta details in Firestore (location, email, etc.)
+      await setDoc(doc(db, "users", userCredential.user.uid), {
+        name: credentials.name,
+        email: credentials.email,
+        location: credentials.geolocation,
+        createdAt: new Date().toISOString()
+      });
 
-    alert("Signup successful!");
-    navigate('/login');
-  } catch (error) {
-    alert(error.message || "Something went wrong! Please try again.");
-  } finally {
-    setIsLoading(false);
-  }
-};
+      alert("Signup successful!");
+      navigate('/login');
+    } catch (error) {
+      alert(error.message || "Something went wrong! Please try again.");
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
 
   const onChange = (event) => {
@@ -60,9 +53,9 @@ export default function Signup() {
   };
 
   return (
-    <>
+    <div className="page-wrapper">
       <Navbar />
-      <div className="signup-background">
+      <div className="signup-background content-wrapper">
         <div className="signup-container">
           <h2 className="signup-heading">Create Account</h2>
           <form onSubmit={handleSubmit}>
@@ -127,9 +120,7 @@ export default function Signup() {
           </form>
         </div>
       </div>
-      <div>
-        <Footer/>
+      <Footer />
     </div>
-    </>
   );
 }

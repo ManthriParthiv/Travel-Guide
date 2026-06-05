@@ -1,126 +1,137 @@
-/* Background with image and animations */
+/* Premium Glassmorphic Signup Styles */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 .signup-background {
-  background-image: url('../assests/images/login.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  min-height: 100vh;
+  min-height: calc(100vh - 180px);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 70px; /* Account for fixed navbar */
+  background: transparent;
+  padding: 6.5rem 1rem 4rem; /* Top padding for fixed navbar */
 }
 
-/* Signup container styling */
 .signup-container {
-  background-color: rgba(255, 255, 255, 0.9);
-  padding: 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  padding: 2.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
   width: 100%;
-  max-width: 450px; /* Slightly wider than login */
+  max-width: 440px; /* Slightly wider for location input */
   margin: 1rem;
-}
-
-/* Heading style */
-.signup-heading {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+  font-family: 'Plus Jakarta Sans', sans-serif;
   text-align: center;
-  font-weight: 600;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Form group styling */
+.signup-heading {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 2.2rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #1e293b 30%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .form-group {
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: #444;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #475569;
   text-align: left;
 }
 
-/* Input styling */
 .form-control {
   width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: 1px solid #ddd;
-  transition: all 0.3s ease;
+  padding: 0.85rem 1.15rem;
+  font-size: 0.95rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #1e293b;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-sizing: border-box;
 }
 
 .form-control:focus {
-  border-color: #28a745;
-  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
   outline: none;
+  border-color: #6366f1;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1), 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 /* Button styling */
 .btn {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border-radius: 6px;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin: 0.5rem 0;
-  font-weight: 500;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
   text-align: center;
   display: inline-block;
+  text-decoration: none;
+  box-sizing: border-box;
 }
 
 .btn-success {
-  background-color: #28a745;
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
   color: white;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.3);
+}
+
+.btn-success:active {
+  transform: translateY(1px);
+}
+
+.btn-success:disabled {
+  background: #cbd5e1;
+  color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
 
 .btn-danger {
-  background-color: #dc3545;
-  color: white;
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  color: #64748b;
+  margin-top: 1rem;
 }
 
-.btn:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn:disabled {
-  opacity: 0.7;
-  transform: none;
-  animation: none;
-}
-
-/* Animations (same as login) */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.btn-danger:hover {
+  background: rgba(99, 102, 241, 0.05);
+  color: #4f46e5;
+  border-color: rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
 }
 
 @keyframes slideUp {
   from {
-    transform: translateY(50px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-@keyframes buttonPulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
 }

@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
@@ -8,7 +9,7 @@ app.use(cors());
 
 app.get('/proxy/:stationCode', async (req, res) => {
   const { stationCode } = req.params;
-  const API_KEY = '875b449782667e2df87ee7093b299b8f'; // Replace with your API key
+  const API_KEY = process.env.INDIAN_RAIL_API_KEY || '875b449782667e2df87ee7093b299b8f'; // Replace with your API key
   const url = `https://indianrailapi.com/api/v2/StationLocationOnMap/apikey/${API_KEY}/StationCode/${stationCode}`;
 
   try {

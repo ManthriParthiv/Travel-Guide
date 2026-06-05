@@ -1,4 +1,123 @@
-.navbar {
-  background-color: #ffffff !important;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+/* Premium Glassmorphic Navbar Styling */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+.premium-navbar {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(18px) !important;
+  -webkit-backdrop-filter: blur(18px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02) !important;
+  padding: 0.8rem 0;
+  transition: all 0.3s ease;
+}
+
+.premium-navbar .navbar-brand {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #1e293b 40%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: opacity 0.2s ease;
+}
+
+.premium-navbar .navbar-brand:hover {
+  opacity: 0.85;
+}
+
+.premium-navbar .nav-link {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: #475569 !important;
+  transition: color 0.2s ease;
+  padding: 0.5rem 1rem !important;
+}
+
+.premium-navbar .nav-link:hover {
+  color: #6366f1 !important;
+}
+
+/* Custom styled buttons in navbar */
+.premium-navbar .btn-outline-primary {
+  border: 1px solid rgba(99, 102, 241, 0.2) !important;
+  background: rgba(99, 102, 241, 0.03) !important;
+  color: #6366f1 !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 0.5rem 1.2rem !important;
+  font-size: 0.88rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.premium-navbar .btn-outline-primary:hover {
+  background: #6366f1 !important;
+  color: white !important;
+  border-color: #6366f1 !important;
+  transform: translateY(-1px);
+}
+
+.premium-navbar .btn-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%) !important;
+  border: none !important;
+  color: white !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 0.5rem 1.2rem !important;
+  font-size: 0.88rem !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15) !important;
+  transition: all 0.2s ease !important;
+}
+
+.premium-navbar .btn-primary:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #9333ea 100%) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.25) !important;
+}
+
+.premium-navbar .btn-outline-danger {
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  background: rgba(239, 68, 68, 0.03) !important;
+  color: #ef4444 !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  padding: 0.4rem 1rem !important;
+  font-size: 0.85rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.premium-navbar .btn-outline-danger:hover {
+  background: #ef4444 !important;
+  color: white !important;
+  border-color: #ef4444 !important;
+}
+
+/* User identity badge */
+.premium-navbar .navbar-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #64748b !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+}
+
+/* Dropdown items */
+.hover-item:hover {
+  background-color: rgba(99, 102, 241, 0.06) !important;
+  transform: translateX(2px);
+}
+
+.dropdown-menu {
+  animation: slideIn 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,13 +1,60 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./infosection.css";
 import SmartImage from './SmartImage';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function TripDetails({ trip }) {
+  const navigate = useNavigate();
   // Safely extract data with proper fallbacks
   const tripdata = trip?.tripdata || {};
   const userSelection = trip?.userSelection || {};
   const hotels = tripdata.hotelOptions || [];
   const itinerary = tripdata.itinerary || {};
+
+  const [forecast, setForecast] = useState([]);
+  const [weatherLoading, setWeatherLoading] = useState(false);
+  const [weatherError, setWeatherError] = useState(null);
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+      const cityLabel = userSelection.location?.label;
+      if (!cityLabel) return;
+      const city = cityLabel.split(',')[0].trim();
+      setWeatherLoading(true);
+      setWeatherError(null);
+      try {
+        const apiKey = process.env.REACT_APP_WEATHER_API_KEY || 'a1f4f24f1c19b4815aaa1b634a70b454';
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`
+        );
+        
+        // Filter to get one forecast per day (around 12:00:00 noon)
+        const dailyData = response.data.list.filter(item => item.dt_txt.includes("12:00:00"));
+        setForecast(dailyData);
+      } catch (err) {
+        console.error("Error fetching weather forecast:", err);
+        setWeatherError("Failed to fetch weather forecast.");
+      } finally {
+        setWeatherLoading(false);
+      }
+    };
+
+    fetchWeather();
+  }, [userSelection.location?.label]);
+
+  const getMapUrl = (item, defaultName) => {
+    const lat = parseFloat(item.geoCoordinates?.latitude);
+    const lng = parseFloat(item.geoCoordinates?.longitude);
+    
+    // Check if coordinates are valid numbers, not 0 (commonly used as fallback), and within valid range
+    if (!isNaN(lat) && !isNaN(lng) && lat !== 0 && lng !== 0 && Math.abs(lat) <= 90 && Math.abs(lng) <= 180) {
+      return `https://www.google.com/maps?q=${lat},${lng}`;
+    }
+    
+    const searchQuery = `${item.placeName || item.hotelName || defaultName} ${userSelection.location?.label || ''}`;
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(searchQuery)}`;
+  };
 
   // Sort itinerary days numerically (day1, day2, etc.)
   const sortedItinerary = Object.entries(itinerary)
@@ -24,6 +71,9 @@ function TripDetails({ trip }) {
 
   return (
     <div className="trip-container">
+      <button className="trip-back-button" onClick={() => navigate('/create-trip')}>
+        ← Back to Planner
+      </button>
       {/* Trip Overview Header */}
       <div className="info-section">
         <div className="info-header">
@@ -70,8 +120,41 @@ function TripDetails({ trip }) {
               </div>
             </div>
           </div>
-        </div>
       </div>
+    </div>
+
+      {/* Weather Forecast Section */}
+      <section className="weather-section">
+        <h2 className="section-title">🌦️ 5-Day Weather Forecast ({userSelection.location?.label?.split(',')[0]})</h2>
+        {weatherLoading && <p className="text-muted small">Loading weather forecast...</p>}
+        {weatherError && <p className="text-danger small">{weatherError}</p>}
+        {!weatherLoading && !weatherError && forecast.length === 0 && (
+          <p className="text-muted small">No weather forecast available.</p>
+        )}
+        {!weatherLoading && !weatherError && forecast.length > 0 && (
+          <div className="weather-grid">
+            {forecast.map((day, idx) => {
+              const date = new Date(day.dt * 1000);
+              const dayName = date.toLocaleDateString('en-US', { weekday: 'short' });
+              const formattedDate = date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+              const temp = Math.round(day.main.temp);
+              const description = day.weather[0].description;
+              const iconCode = day.weather[0].icon;
+              const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+              
+              return (
+                <div key={idx} className="weather-card">
+                  <div className="weather-day">{dayName}</div>
+                  <div className="weather-date">{formattedDate}</div>
+                  <img src={iconUrl} alt={description} className="weather-icon-img" />
+                  <div className="weather-temp">{temp}°C</div>
+                  <div className="weather-desc">{description}</div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+      </section>
 
       {/* Hotels Section */}
       <section className="hotels-section">
@@ -102,16 +185,14 @@ function TripDetails({ trip }) {
                 {hotel.description && (
                   <p className="hotel-description">{hotel.description}</p>
                 )}
-                {hotel.geoCoordinates?.latitude && hotel.geoCoordinates?.longitude && (
-                  <a
-                    href={`https://www.google.com/maps?q=${hotel.geoCoordinates.latitude},${hotel.geoCoordinates.longitude}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="map-link"
-                  >
-                    View on Map
-                  </a>
-                )}
+                <a
+                  href={getMapUrl(hotel, hotel.hotelName)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="map-link"
+                >
+                  View on Map
+                </a>
               </div>
             </div>
           ))}
@@ -165,6 +246,14 @@ function TripDetails({ trip }) {
                             <p><strong>Travel from hotel:</strong> {activity.travelTimeFromHotel}</p>
                           )}
                         </div>
+                        <a
+                          href={getMapUrl(activity, activity.placeName)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="activity-map-link"
+                        >
+                          📍 View on Map
+                        </a>
                       </div>
                     </div>
                   ))}

@@ -12,7 +12,8 @@ const WeatherReport = () => {
     setError(null);
 
     try {
-      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=a1f4f24f1c19b4815aaa1b634a70b454&units=metric`);
+      const apiKey = process.env.REACT_APP_WEATHER_API_KEY || 'a1f4f24f1c19b4815aaa1b634a70b454';
+      const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
       setWeatherData(response.data);
     } catch (error) {
       console.error('Error fetching weather data', error);

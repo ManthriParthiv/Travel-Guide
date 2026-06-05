@@ -5,19 +5,20 @@
   right: 20px;
   width: 350px;
   height: 500px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.15);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  border: 1px solid #e1e8ed;
+  border: 1px solid rgba(255, 255, 255, 0.6);
   z-index: 1000;
-  transition: all 0.3s ease;
   transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .chatbot:not(.open) {
@@ -33,26 +34,26 @@
   right: 20px;
   width: 60px;
   height: 60px;
-  background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+  background: linear-gradient(135deg, #6366f1, #a855f7);
   color: white;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
   z-index: 1001;
   transition: all 0.3s ease;
 }
 
 .chatbot-toggle-button:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(29, 161, 242, 0.4);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
 }
 
 .chatbot-toggle-button svg {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 /* Chat Window */
@@ -84,7 +85,7 @@
 
 .user-message {
   align-self: flex-end;
-  background: #1da1f2;
+  background: #6366f1;
   color: white;
   border-bottom-right-radius: 5px;
 }
@@ -116,8 +117,8 @@
 }
 
 .input input:focus {
-  border-color: #1da1f2;
-  box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
 .input button {
@@ -125,7 +126,7 @@
   width: 45px;
   height: 45px;
   border: none;
-  background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+  background: linear-gradient(135deg, #6366f1, #a855f7);
   color: white;
   border-radius: 50%;
   display: flex;
@@ -136,7 +137,7 @@
 }
 
 .input button:hover {
-  background: linear-gradient(135deg, #0d8ecf, #1da1f2);
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
   transform: scale(1.05);
 }
 
@@ -191,7 +192,7 @@
 /* Add to your existing CSS */
 .chat-header {
     padding: 15px;
-    background: linear-gradient(135deg, #1da1f2, #0d8ecf);
+    background: linear-gradient(135deg, #6366f1, #a855f7);
     color: white;
     display: flex;
     justify-content: space-between;

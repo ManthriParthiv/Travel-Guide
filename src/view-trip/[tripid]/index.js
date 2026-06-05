@@ -6,6 +6,7 @@ import Infosection from './components/infosection';
 import ErrorBoundary from './components/ErrorBoundary';
 import LoadingSpinner from './components/LoadingSpinner';
 import Navbar2 from '../../components/Navbar2';
+import Footer from '../../components/Footer';
 
 function Viewtrip() {
     const { tripid } = useParams();
@@ -66,11 +67,14 @@ function Viewtrip() {
     }
 
     return (
-    <div>
+    <div className="page-wrapper">
         <Navbar2/>
-        <ErrorBoundary>
-            <Infosection trip={trip} />
-        </ErrorBoundary>
+        <div className="content-wrapper">
+            <ErrorBoundary>
+                <Infosection trip={trip} />
+            </ErrorBoundary>
+        </div>
+        <Footer />
     </div>
     );
 }
