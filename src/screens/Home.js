@@ -22,17 +22,17 @@ export default function Home() {
         <section className="features-section" id="features">
           <div className="section-header">
             <h2>🌟 Why Use Our Travel Planner?</h2>
-            <p>Experience the future of seamless travel planning powered by intelligent AI models.</p>
+            <p>Smart, interactive trip planning designed exactly around how you love to explore.</p>
           </div>
 
           <div className="features-grid">
             <div className="feature-card">
-              <h3>🤖 AI Itinerary Planner</h3>
+              <h3>🤖 AI Powered Itinerary Planner</h3>
               <p>Draft highly personalized day-by-day itineraries complete with hotels, ratings, pricing, and travel times tailored to your budget.</p>
             </div>
             
             <div className="feature-card">
-              <h3>🛰️ AI Journey Analyzer</h3>
+              <h3>🛰️ Journey Analyzer</h3>
               <p>Input any flight code, train number, or bus route to get instant schedules, duration, precautions, and safety reports.</p>
             </div>
 
